@@ -1,7 +1,5 @@
-//run onkeyup="replace('___________')"
-
 function replace(id){
-	var st=document.getElementById('____________').value;
+	var st=document.getElementById('string').value;
 	st= st.split('')
 	while(typeof st[i]=== 'string'){
 		i++
