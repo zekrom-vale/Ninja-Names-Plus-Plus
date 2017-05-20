@@ -3,7 +3,7 @@ function replace(id){
 	st= st.split('')
 	while(typeof st[i]=== 'string'){
 		i++
-		switch(){
+		switch(st[i]){
 			case 'a':
 				st[i]= 'ka';
 		       		break;
