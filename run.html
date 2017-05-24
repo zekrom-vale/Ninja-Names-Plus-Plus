@@ -1,12 +1,59 @@
 <!DOCTYPE html>
 <html>
-	<body>
-		Type your name: 
-		<input type="text" id="string" onkeyup="replace('rez')"/>
-		
-		<p id="rez">
-			Result
-		</p>
+	<head>
+		<link href='https://fonts.googleapis.com/css?family=Kaushan Script' rel='stylesheet'>
+		<link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet'>
 		<script src="core.js"></script>
+		<style>
+			@media (min-width: 1200px){
+				#string{
+					font:100px Arial;
+					width:calc(100vw - 725px - 20px)
+				}
+			}
+			@media (max-width: 1199px){
+				#string{
+					font:100px Arial;
+					width:calc(100vw - 20px)
+				}
+			}
+			#rez{
+				font-weight: 100;
+				font-family:'Kaushan Script';
+				font-size:25vh;
+				margin:auto 0;
+				text-align:center
+			}
+			footer{
+				position:fixed;
+				bottom:10px;
+				background:gray;
+				width:100vw;
+				margin:0
+			}
+			footer p{
+				text-align:center
+			}
+			body{
+				margin:0
+			}
+			div{
+				margin:10px
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<span style="font-size:100px; text-align:center">
+				Type your name: 
+				<input onkeyup="act('rez');" type="text" id="string" value="null">
+			</span>
+			<p id="rez">todotata</p>
+		</div>
+		<footer>
+			<p>
+				* is an invalid character
+			</p>
+		</footer>
 	</body>
 </html>

@@ -1,8 +1,10 @@
-function replace(id){
-	var st=document.getElementById('string').value;
-	st= st.split('')
+"strict mode";
+var st, i;
+function act(id){
+	st=document.getElementById('string').value;
+	st= st.split('');
+	i=0;
 	while(typeof st[i]=== 'string'){
-		i++
 		switch(st[i]){
 			case 'a':
 				st[i]= 'ka';
@@ -82,16 +84,107 @@ function replace(id){
 			case 'z':
 				st[i]= 'zi';
 		       		break;
+			case 'A':
+				st[i]= 'Ka';
+		       		break;
+			case 'B':
+				st[i]= 'Zu';
+		       		break;
+			case 'C':
+				st[i]= 'Mi';
+		       		break;
+			case 'D':
+				st[i]= 'Te';
+		       		break;
+			case 'E':
+				st[i]= 'Ku';
+		       		break;
+			case 'F':
+				st[i]= 'Lu';
+		       		break;
+			case 'G':
+				st[i]= 'Ji';
+		       		break;
+			case 'H':
+				st[i]= 'Ri';
+		       		break;
+			case 'I':
+				st[i]= 'Ki';
+		       		break;
+			case 'J':
+				st[i]= 'Zu';
+		       		break;
+			case 'K':
+				st[i]= 'Me';
+		       		break;
+			case 'L':
+				st[i]= 'Ta';
+		       		break;
+			case 'M':
+				st[i]= 'Rin';
+		       		break;
+			case 'N':
+				st[i]= 'To';
+		       		break;
+			case 'O':
+				st[i]= 'Mo';
+		       		break;
+			case 'P':
+				st[i]= 'No';
+		       		break;
+			case 'Q':
+				st[i]= 'Ke';
+		       		break;
+			case 'R':
+				st[i]= 'Shi';
+		       		break;
+			case 'S':
+				st[i]= 'Ari';
+		       		break;
+			case 'T':
+				st[i]= 'Chi';
+		       		break;
+			case 'U':
+				st[i]= 'Do';
+		       		break;
+			case 'V':
+				st[i]= 'Ru';
+		       		break;
+			case 'W':
+				st[i]= 'Mei';
+		       		break;
+			case 'X':
+				st[i]= 'Na';
+		       		break;
+			case 'Y':
+				st[i]= 'Fu';
+		       		break;
+			case 'Z':
+				st[i]= 'Zi';
+		       		break;
 			case ' ':
 				st[i]= ' ';
 		       		break;
+			case "'":
+			case '_':
+			case '-':
+			case '.':
+			case ',':
+				break;
 			defult:
 				console.log(st[i]);
 				st[i]= ' ';
 				break;
 		}
-		
+		i++;
 	}
-	st= st.toString;
-	document.getElementbyId(id).innerHTML= st;
+	console.log(st);
+	st= st.join('*');
+	while(st.includes('*')){
+		st= st.replace('*','');
+	}
+	if(st==''){
+		st= '<small style="font:10vh Orbitron">Name not Defined</small>'
+	}
+	document.getElementById(id).innerHTML= st;
 }
