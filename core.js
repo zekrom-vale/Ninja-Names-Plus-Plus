@@ -1,10 +1,51 @@
 "strict mode";
-var st, i;
+var st, i, upper, C;
 function act(id){
+	C= '';
 	st=document.getElementById('string').value;
 	st= st.split('');
 	i=0;
 	while(typeof st[i]=== 'string'){
+		if (st[i]== st[i].toUpperCase()){upper= true; st[i]= st[i].toLowerCase();}
+		else{upper= false;}
+		// on "n" where n is a character, it is NOT converted!
+		if(st[i - 1]+ st[i + 1]== '""'){
+			st[i - 1]= st[i + 1]= '';
+		}
+		else if(st[i - 1]== '&' && st[i + 2]== ';' ){}
+		else if(st[i - 2]== '&' && st[i + 1]== ';' ){}
+		
+		else if(st[i - 1]== '&' && st[i + 3]== ';' ){}
+		else if(st[i - 2]== '&' && st[i + 2]== ';' ){}
+		else if(st[i - 3]== '&' && st[i + 1]== ';' ){}
+		
+		else if(st[i - 1]== '&' && st[i + 4]== ';' ){}
+		else if(st[i - 2]== '&' && st[i + 3]== ';' ){}
+		else if(st[i - 3]== '&' && st[i + 2]== ';' ){}
+		else if(st[i - 4]== '&' && st[i + 1]== ';' ){}
+		
+		/*   6-a=b
+		var a=1,
+		b;
+		while(a< 6){
+			b= 6-a;
+			else if(st[i - a]== '&' && st[i + b]== ';' ){}
+			a++;
+		}*/
+		else if(st[i - 1]== '&' && st[i + 5]== ';' ){}
+		else if(st[i - 2]== '&' && st[i + 4]== ';' ){}
+		else if(st[i - 3]== '&' && st[i + 3]== ';' ){}
+		else if(st[i - 4]== '&' && st[i + 2]== ';' ){}
+		else if(st[i - 5]== '&' && st[i + 1]== ';' ){}
+		
+		else if(st[i - 1]== '&' && st[i + 6]== ';' ){}
+		else if(st[i - 2]== '&' && st[i + 5]== ';' ){}
+		else if(st[i - 3]== '&' && st[i + 4]== ';' ){}
+		else if(st[i - 4]== '&' && st[i + 3]== ';' ){}
+		else if(st[i - 5]== '&' && st[i + 2]== ';' ){}
+		else if(st[i - 6]== '&' && st[i + 1]== ';' ){}
+		
+		else{
 		switch(st[i]){
 			case 'a':
 				st[i]= 'ka';
@@ -84,107 +125,61 @@ function act(id){
 			case 'z':
 				st[i]= 'zi';
 		       		break;
-			case 'A':
-				st[i]= 'Ka';
-		       		break;
-			case 'B':
-				st[i]= 'Zu';
-		       		break;
-			case 'C':
-				st[i]= 'Mi';
-		       		break;
-			case 'D':
-				st[i]= 'Te';
-		       		break;
-			case 'E':
-				st[i]= 'Ku';
-		       		break;
-			case 'F':
-				st[i]= 'Lu';
-		       		break;
-			case 'G':
-				st[i]= 'Ji';
-		       		break;
-			case 'H':
-				st[i]= 'Ri';
-		       		break;
-			case 'I':
-				st[i]= 'Ki';
-		       		break;
-			case 'J':
-				st[i]= 'Zu';
-		       		break;
-			case 'K':
-				st[i]= 'Me';
-		       		break;
-			case 'L':
-				st[i]= 'Ta';
-		       		break;
-			case 'M':
-				st[i]= 'Rin';
-		       		break;
-			case 'N':
-				st[i]= 'To';
-		       		break;
-			case 'O':
-				st[i]= 'Mo';
-		       		break;
-			case 'P':
-				st[i]= 'No';
-		       		break;
-			case 'Q':
-				st[i]= 'Ke';
-		       		break;
-			case 'R':
-				st[i]= 'Shi';
-		       		break;
-			case 'S':
-				st[i]= 'Ari';
-		       		break;
-			case 'T':
-				st[i]= 'Chi';
-		       		break;
-			case 'U':
-				st[i]= 'Do';
-		       		break;
-			case 'V':
-				st[i]= 'Ru';
-		       		break;
-			case 'W':
-				st[i]= 'Mei';
-		       		break;
-			case 'X':
-				st[i]= 'Na';
-		       		break;
-			case 'Y':
-				st[i]= 'Fu';
-		       		break;
-			case 'Z':
-				st[i]= 'Zi';
-		       		break;
+			case '>':
+				st[i]= '&gt;'
+				break;
+			case '<':
+				st[i]= '&lt;'
 			case ' ':
-				st[i]= ' ';
-		       		break;
 			case "'":
+			case '"':
 			case '_':
 			case '-':
 			case '.':
 			case ',':
+			case '':
+				upper= false;
 				break;
-			defult:
-				console.log(st[i]);
-				st[i]= ' ';
+			default:
+				upper= false;
+				C+= st[i];
 				break;
+		}
+		}
+		if(upper== true){
+			st[i]= st[i].split('');
+			st[i][0]= st[i][0].toUpperCase();
+			st[i]= st[i].join('');
 		}
 		i++;
 	}
 	console.log(st);
-	st= st.join('*');
-	while(st.includes('*')){
-		st= st.replace('*','');
-	}
-	if(st==''){
+	st= st.join('');
+	if(st== '' || null || undefined){
 		st= '<small style="font:10vh Orbitron">Name not Defined</small>'
 	}
 	document.getElementById(id).innerHTML= st;
+	if(C!= ''){
+		C= C.split('');
+		C= C.sort();
+		var c= ['error'],
+		z= y=0;
+		for(z in C){
+			//Remove duplicates
+			if(C[z - 1]!= C[z]){
+				c[y]= C[z];
+				y++;
+			}
+			z++;
+		}
+		z= 0;
+		//Encase in '""'
+		for(z in c){
+			c[z]= '"'+ c[z]+ '"';
+		}
+		c= c.join(', ');
+		document.getElementById('odd').innerHTML= 'Problem characters: ['+ c+ ']';
+	}
+	else{document.getElementById('odd').innerHTML= 'No Problem characters Detected';}
+	c= C= y= z= st= i= upper= null;
 }
