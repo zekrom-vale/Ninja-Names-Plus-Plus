@@ -247,23 +247,11 @@ function act(id){
 
 
 function expt(e){
-	var vl= i + 1;
-	while(vl< e + i){
-		st[i]+= st[vl];
-		st[vl]='';
-		vl++;
-	}
 	st[i - 1]= '';
 	st[i + e]= '';
 	i+= e;
 }
 function exptA(e){
-	var vl= i + 1;
-	while(vl<= e + i){
-		st[i]+= st[vl];
-		st[vl]='';
-		vl++;
-	}
 	C[I]= '&'+ st[i];
 	I++;
 	i+= e;
