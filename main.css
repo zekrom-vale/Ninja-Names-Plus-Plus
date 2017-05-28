@@ -1,0 +1,50 @@
+@media print{
+	.options,
+	#odd,
+	.prompt{
+		display:none
+	}
+	#string{
+		border:none;
+		text-align:center;
+		text-decoration:underline
+	}
+}
+@media (min-width: 1200px){
+	#string{
+		font:100px Arial;
+		width:calc(100vw - 725px - 20px)
+	}
+}
+@media (max-width: 1199px){
+	#string{
+		font:100px Arial;
+		width:calc(100vw - 20px)
+	}
+}
+footer{
+	background:gray;
+	width:100vw;
+	margin:0
+}
+footer p{
+	text-align:center;
+	margin:0;
+	padding:20px
+}
+body{
+	margin:0
+}
+.div{
+	margin:10px
+}
+#options{
+	width:300px;
+	margin:10px;
+	border:solid black 3px;
+	padding:5px;
+	overflow-x:hidden
+}
+#optCen p{
+	margin:0
+}

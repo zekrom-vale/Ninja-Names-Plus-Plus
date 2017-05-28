@@ -1,31 +1,62 @@
 "strict mode";
-var st, i, upper, C, I;
-function act(id){
-	C= [''];
+var st, i, upper, C, I, chk= [false, false],
+delta= 'null';
+//window.addEventListener("beforeunload", function(event){event.returnValue= "";});
+function act(id, event){
 	st=document.getElementById('string').value;
+	if(event.keyCode== 46 && event.shiftKey && st!= ''){
+		var r= confirm('Are you shure you want to delete your name?')
+		if(r){
+			st= document.getElementById('string').value= '';
+		}
+	}
+	chk[0]= document.getElementById('io').checked;
+	if(	(
+			st== delta && 
+			chk[0]== chk[1]
+		)||
+		(
+			chk[0]!= chk[1] &&(
+				st.match(/\W/g)==' ' || 
+				st.match(/\W/g)== null
+			)
+		)
+	){
+		chk[1]= chk[0];
+		return;
+	}
+	chk[1]= chk[0];
+	delta= st;
+	C= [''];
 	st= st.split('');
 	I= i=0;
 	core:
 	while(st.length> i){
-		//typeof st[i]=== 'string'
 		var Y= 1;
-		if(st[i - 1]=='*' && st[i - 2]== '*' && st[i]!= '*'){
-			while(Y< st.length - i){
-				if(st[i + Y]=='*' && st[i + Y + 1]== '*'){
-					st[i - 1]= '<b>';
-					st[i + Y]= '</b>';
-					st[i - 2]= st[i + Y + 1]= '';
-					break;
+		if(!chk[1]){
+			if(st[i - 1]=='*' && st[i - 2]== '*' && st[i]!= '*'){
+				while(Y< st.length - i){
+					if(st[i + Y]=='*' && st[i + Y + 1]== '*'){
+						st[i - 1]= '<b>';
+						st[i + Y]= '</b>';
+						st[i - 2]= st[i + Y + 1]= '';
+						break;
+					}
+				Y++;
 				}
-			Y++;
 			}
+			mark('`', 'mark', Y);
+			mark('~', 'em', Y);
+			mark('_', 'u', Y);
+			mark('^', 'sup', Y);
+			mark('$', 'sub', Y);
 		}
-		mark('`', 'mark', Y);
-		mark('~', 'em', Y);
-		mark('_', 'u', Y);
-		mark('^', 'sup', Y);
-		mark('$', 'sub', Y);
-		//Avoid('"', '"', function(){st[i - 1]= st[i + Y]= '';});
+		if(st[i - 1]== '%' &&  st[i]== '"'){
+			st[i - 1]= '';
+			st[i]= "''";
+			i++;
+			continue core;
+		}
 		if(st[i - 1]== '"' && st[i]!= '"'){
 			while(Y< st.length - i){
 				if(st[i + Y]== '"'){
@@ -35,12 +66,6 @@ function act(id){
 				}
 				Y++;
 			}
-		}
-		if(st[i - 1]== '%' &&  st[i]== '"'){
-			st[i - 1]= '';
-			st[i]= "''"
-			i++;
-			continue core;
 		}
 		//Unicode
 		if(st[i - 1]== '&'){
@@ -55,6 +80,38 @@ function act(id){
 		if(st[i - 1]== '<' ){
 			while(Y< st.length - i){
 				if(st[i + Y]== '>'){
+					var X= 1;
+					while(X < Y){
+						st[i]+=st[i + X]
+						st[i + X]= '';
+						X++;
+					}
+					st[i]=st[i].split('');
+					if(st[i][0]== '/'){
+						st[i][0]= '';
+						st[i]= st[i].join('');
+						if(/^(html)/i.test(st[i])){
+							st[i - 1]= st[i]= st[i + Y]= '';
+						}
+						else if(/^(head|body)/i.test(st[i])){
+							st[i]='/div';
+						}
+						//else if(/(script)/i.test(st[i])){st[i]='/code';}
+						else{
+							st[i]='/' +st[i];
+						}
+					}
+					else{st[i]= st[i].join('');}
+					if(/^(html|!DOCTYPE|meta)/i.test(st[i])){
+						st[i - 1]= st[i]= st[i + Y]= '';
+					}
+					else if(/^(head|body)/i.test(st[i])){
+						st[i]='div';
+					}
+					else if(/^(script)/i.test(st[i])){
+						st[i]='code';
+					}
+					//I can condense this in a function, function reg(reg, re)
 					i+= Y;
 					continue core;
 				}
@@ -157,13 +214,22 @@ function act(id){
 			case '-':
 			case '':
 			case '&':
-				upper= false;
-				break;
+				i++;
+				continue;
+			case undefined:
+			case null:
+				if(st[i]=== null){H= 'Null';}
+				else{H= 'Undefined';}
+				console.log('"'+ H+ ' Value" Error');
+				C[I]= H;
+				I++;
+				i++;
+				continue;
 			default:
-				upper= false;
 				C[I]= st[i];
 				I++;
-				break;
+				i++;
+				continue;
 		}
 		if(upper== true){
 			st[i]= st[i].split('');
@@ -201,21 +267,6 @@ function act(id){
 	else{document.getElementById('odd').innerHTML= 'No Problem characters Detected';}
 	c= C= y= z= st= i= upper= null;
 }
-/*function Avoid(comp, r, fn){
-	if(st[i - 1]== comp && st[i]!= comp){
-		var Y= 1;
-		while(Y< st.length - i){
-			if(st[i + Y]== r){
-					fn();
-				i+= Y;
-				skip= true;
-				break;
-			}
-			Y++;
-		}
-	}
-}*/
-
 function mark(s, b, Y){
 	if(st[i - 1]==s && st[i]!= s){
 		while(Y< st.length - i){
@@ -226,5 +277,44 @@ function mark(s, b, Y){
 			}
 		Y++;
 		}
+	}
+}
+
+function css(){
+	if(document.getElementById('css').checked){
+		//Clear CSS
+		document.getElementById('rez').style.fontFamily='';
+		document.getElementById('rez').style.margin='';
+		document.getElementById('rez').style.textAlign='';
+	}
+	else{
+		document.getElementById('rez').style.fontFamily=" 'Kaushan Script'";
+		document.getElementById('rez').style.margin='auto 0';
+		document.getElementById('rez').style.textAlign='center';
+	}
+}
+function Sz(){
+	if(/(em|ex|%|px|cm|mm|in|pt|pc|ch|rem|vh|vw|vmin|vmax)/.test(document.getElementById('size').value)){
+		document.getElementById('rez').style.fontSize= document.getElementById('size').value;
+		if(!document.getElementById('css').checked){
+			document.getElementById('rez').style.fontFamily="'Kaushan Script'";
+		}
+	}
+	else{
+		document.getElementById('rez').style.fontSize='';
+	}
+}
+function zero(){
+	if(document.getElementById('optCen').style.display!=''){
+		document.getElementById('optCen').style.display= '';
+		document.getElementById('options').style.height= '200px';
+		document.getElementById('options').style.overflowY= 'scroll';
+		document.getElementById('hide').innerHTML= 'hide';
+	}
+	else{
+		document.getElementById('options').style.height= '';
+		document.getElementById('options').style.overflowY= '';
+		document.getElementById('optCen').style.display= 'none';
+		document.getElementById('hide').innerHTML= 'show';	
 	}
 }
