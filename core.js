@@ -1,5 +1,5 @@
 "strict mode";
-var st, i, upper, C, I, chk= [false, false],
+var st, i, upper, C, I, done, chk= [false, false],
 delta= 'null';
 //window.addEventListener("beforeunload", function(event){event.returnValue= "";});
 function act(id, event){
@@ -12,12 +12,12 @@ function act(id, event){
 	}
 	chk[0]= document.getElementById('io').checked;
 	if(	(
-			st== delta && 
+			st== delta &&
 			chk[0]== chk[1]
 		)||
 		(
 			chk[0]!= chk[1] &&(
-				st.match(/\W/g)==' ' || 
+				st.match(/\W/g)== ' ' ||
 				st.match(/\W/g)== null
 			)
 		)
@@ -81,6 +81,7 @@ function act(id, event){
 			while(Y< st.length - i){
 				if(st[i + Y]== '>'){
 					var X= 1;
+					done= false;
 					while(X < Y){
 						st[i]+=st[i + X]
 						st[i + X]= '';
@@ -90,45 +91,35 @@ function act(id, event){
 					if(st[i][0]== '/'){
 						st[i][0]= '';
 						st[i]= st[i].join('');
-						if(/^(html)/i.test(st[i])){
-							st[i - 1]= st[i]= st[i + Y]= '';
-						}
-						else if(/^(head|body)/i.test(st[i])){
-							st[i]='/div';
-						}
-						//else if(/(script)/i.test(st[i])){st[i]='/code';}
-						else{
+						Tag(/^(html)/i, '', Y);
+						//Remove <>
+						Tag(/^(head|body)/i, '/div');
+						//Tag(/(script)/i, '/code');
+						console.log(done);
+						if(done=== false){
 							st[i]='/' +st[i];
+							done= true;
 						}
 					}
 					else{st[i]= st[i].join('');}
-					if(/^(html|!DOCTYPE|meta)/i.test(st[i])){
-						st[i - 1]= st[i]= st[i + Y]= '';
-					}
-					else if(/^(head|body)/i.test(st[i])){
-						st[i]='div';
-					}
-					else if(/^(script)/i.test(st[i])){
-						st[i]='code';
-					}
-					//I can condense this in a function, function reg(reg, re)
+					Tag(/^(html|!DOCTYPE|meta)/i, '', Y);
+					Tag(/^(head|body)/i,'div');
+					//Tag(/^(script)/i, 'code');
 					i+= Y;
 					continue core;
 				}
 				Y++;
 			}
 		}
-		//igrore numbers
-		//if(!isNaN(st[i])){skip= true;}
-		if (st[i]== st[i].toUpperCase()){
+		//if(!isNaN(st[i])){skip= true;}  //igrore numbers
+		if (st[i]== st[i].toUpperCase() && /\w/.test(st[i])){
 			upper= true;
 			st[i]= st[i].toLowerCase();
 		}
-		else{upper= false;}
 		switch(st[i]){
-			case 'a':
-				st[i]= 'ka';
-					break;
+			case 'a':// on a
+				st[i]= 'ka';//change it too ka
+					break;//end
 			case 'b':
 				st[i]= 'zu';
 					break;
@@ -215,7 +206,7 @@ function act(id, event){
 			case '':
 			case '&':
 				i++;
-				continue;
+				continue;//continue on to next character
 			case undefined:
 			case null:
 				if(st[i]=== null){H= 'Null';}
@@ -279,6 +270,16 @@ function mark(s, b, Y){
 		}
 	}
 }
+function Tag(Reg,tg, Y){
+	if(done=== false && Reg.test(st[i])){
+		st[i]=tg;
+		if(tg==''){
+			st[i - 1]= st[i + Y]='';
+		}
+		done= true;
+	}
+}
+
 
 function css(){
 	if(document.getElementById('css').checked){
