@@ -205,7 +205,7 @@ function act(id, event){
 			case '-':
 			case '':
 			case '&':
-				i++;
+				i++;//part of continue (required! DO NOT REMOVE!)
 				continue;//continue on to next character
 			case undefined:
 			case null:
