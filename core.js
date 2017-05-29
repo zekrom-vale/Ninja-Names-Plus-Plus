@@ -403,9 +403,15 @@ function reSetLt(){
 	setLt();
 }
 function del(){
-	var r= confirm('Are you shure you want to delete your name?')
-	if(r){
-		document.getElementById('string').value= '';
-		document.getElementById('rez').innerHTML= '<small style="font:10vh Orbitron">Name not Defined</small>';
+	if(document.getElementById('string').value!= ''){
+		var r= confirm('Are you shure you want to delete your name?')
+		if(r){
+			document.getElementById('string').value= '';
+			document.getElementById('rez').innerHTML= '<small style="font:10vh Orbitron">Name not Defined</small>';
+		}
+	}
+	else{
+		document.getElementById('dl').innerHTML= 'No Value';
+		setTimeout(function(){document.getElementById('dl').innerHTML= 'Delete Name';}, 2000);
 	}
 }
