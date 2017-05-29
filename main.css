@@ -36,7 +36,8 @@ nav button{
 	height:100%;
 	margin:0 5px
 }
-button.esc{
+
+.esc{
 	position:fixed;
 	top:30px;
     right:30px
@@ -95,4 +96,10 @@ body{
 }
 .mod input{
 	font:20px Arial
+}
+.divAv{
+	display:grid;
+	background:lightblue;
+	padding:5px;
+    border-radius:5px
 }

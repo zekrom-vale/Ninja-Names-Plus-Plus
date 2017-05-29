@@ -1,33 +1,15 @@
 "strict mode";
-var st, i, upper, C, I, done, chk= [false, false],
+var st, i, upper, C, I, done,
+chk= [false, false],
 delta= 'null';
 var lt={
-	"a":"ka",
-	"b":"ru",
-	"c":"mi",
-	"d":"te",
-	"e":"ku",
-	"f":"lu",
-	"g":"ji",
-	"h":"ri",
-	"i":"ki",
-	"j":"zu",
-	"k":"me",
-	"l":"ta",
-	"m":"rin",
-	"n":"to",
-	"o":"mo",
-	"p":"no",
-	"q":"ke",
-	"r":"shi",
-	"s":"ari",
-	"t":"chi",
-	"u":"do",
-	"v":"ru",
-	"w":"mei",
-	"x":"na",
-	"y":"fu",
-	"z":"zi"
+	"a":"ka", "b":"ru", "c":"mi", "d":"te",
+	"e":"ku", "f":"lu", "g":"ji", "h":"ri",
+	"i":"ki", "j":"zu", "k":"me", "l":"ta",
+	"m":"rin", "n":"to", "o":"mo", "p":"no",
+	"q":"ke", "r":"shi", "s":"ari", "t":"chi",
+	"u":"do", "v":"ru", "w":"mei", "x":"na",
+	"y":"fu", "z":"zi"
 }
 //window.addEventListener("beforeunload", function(event){event.returnValue= "";});
 function act(id, event){
@@ -52,8 +34,10 @@ function act(id, event){
 	C= [''];
 	st= st.split('');
 	I= i=0;
+	var net=-50;
 	core:
-	while(st.length> i){
+	while(st.length> i && st.length> net){
+		net++;
 		var Y= 1;
 		if(!chk[1]){
 			if(st[i - 1]=='*' && st[i - 2]== '*' && st[i]!= '*'){
@@ -227,8 +211,8 @@ function act(id, event){
 			case '-':
 			case '':
 			case '&':
-				i++;//part of continue (required! DO NOT REMOVE!)
-				continue;//continue on to next character
+				i++;//DO NOT REMOVE!
+				continue;
 			case undefined:
 			case null:
 				if(st[i]=== null){H= 'Null';}
