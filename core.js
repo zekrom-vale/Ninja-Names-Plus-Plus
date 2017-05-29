@@ -32,12 +32,6 @@ var lt={
 //window.addEventListener("beforeunload", function(event){event.returnValue= "";});
 function act(id, event){
 	st=document.getElementById('string').value;
-	if(event.keyCode== 46 && event.shiftKey && st!= ''){
-		var r= confirm('Are you shure you want to delete your name?')
-		if(r){
-			st= document.getElementById('string').value= '';
-		}
-	}
 	chk[0]= document.getElementById('io').checked;
 	if(	(
 			st== delta &&
@@ -407,4 +401,11 @@ function reSetLt(){
     document.getElementById('ltY').value= "fu";
     document.getElementById('ltZ').value= "zi";
 	setLt();
+}
+function del(){
+	var r= confirm('Are you shure you want to delete your name?')
+	if(r){
+		document.getElementById('string').value= '';
+		document.getElementById('rez').innerHTML= '<small style="font:10vh Orbitron">Name not Defined</small>';
+	}
 }
