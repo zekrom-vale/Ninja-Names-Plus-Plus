@@ -1,6 +1,7 @@
 @media print{
 	noscript header,
 	nav,
+	nav button,
 	.options,
 	#odd,
 	.prompt{
@@ -69,6 +70,12 @@ footer p{
 body{
 	margin:0
 }
+#rez{
+	font-size:150px;
+	font-family:'Kaushan Script';
+	margin:auto 0;
+	text-align:center
+}
 .div{
 	margin:10px
 }
@@ -107,7 +114,7 @@ body{
 .opDiv{
 	border:solid black 5px;
 	background:aliceblue;
-	margin:5px 0;
+	margin:0 5px 5px 0;
 	padding:5px 20px;
 	width:80vw
 }
@@ -121,4 +128,14 @@ input[type="checkbox" i]{
 	position:relative;
     bottom:-3px;
     left:-9px
+}
+.opDiv.head{
+	border-bottom:none;
+	border-radius:5px 5px 0 0;
+	width:70px;
+	margin:20px 0 0
+}
+.opDiv.head h4{
+	padding:0;
+	margin:0
 }

@@ -1,8 +1,8 @@
 "strict mode";
 var st, i, upper, C, I, done,
 chk= [false, false],
-delta= 'null';
-var lt={
+delta= 'null',
+lt={
 	"a":"ka", "b":"ru", "c":"mi", "d":"te",
 	"e":"ku", "f":"lu", "g":"ji", "h":"ri",
 	"i":"ki", "j":"zu", "k":"me", "l":"ta",
@@ -29,11 +29,8 @@ function act(id, event){
 		chk[1]= chk[0];
 		return;
 	}
-	chk[1]= chk[0];
-	delta= st;
-	C= [''];
+	chk[1]= chk[0]; delta= st; C= ['']; I= i=0;
 	st= st.split('');
-	I= i=0;
 	var net=-50;
 	core:
 	while(st.length> i && st.length> net){
@@ -73,7 +70,6 @@ function act(id, event){
 				Y++;
 			}
 		}
-		//Unicode
 		if(st[i - 1]== '&'){
 			while(Y< st.length - i){
 				if(st[i + Y]== ';'){
@@ -98,9 +94,7 @@ function act(id, event){
 						st[i][0]= '';
 						st[i]= st[i].join('');
 						Tag(/^(html)/i, '', Y);
-						//Remove <>
 						Tag(/^(head|body)/i, '/div');
-						//Tag(/(script)/i, '/code');
 						console.log(done);
 						if(done=== false){
 							st[i]='/' +st[i];
@@ -110,7 +104,6 @@ function act(id, event){
 					else{st[i]= st[i].join('');}
 					Tag(/^(html|!DOCTYPE|meta)/i, '', Y);
 					Tag(/^(head|body)/i,'div');
-					//Tag(/^(script)/i, 'code');
 					i+= Y;
 					continue core;
 				}
@@ -211,7 +204,8 @@ function act(id, event){
 			case '-':
 			case '':
 			case '&':
-				i++;//DO NOT REMOVE!
+			case ';':
+				i++;
 				continue;
 			case undefined:
 			case null:
@@ -228,7 +222,7 @@ function act(id, event){
 				i++;
 				continue;
 		}
-		if(upper== true){
+		if(upper=== true){
 			st[i]= st[i].split('');
 			st[i][0]= st[i][0].toUpperCase();
 			st[i]= st[i].join('');
@@ -241,12 +235,11 @@ function act(id, event){
 		st= '<small style="font:10vh Orbitron">Name not Defined</small>'
 	}
 	document.getElementById(id).innerHTML= st;
-	if(C!= '' || st.includes('&')){
+	if(C!= ''){
 		C= C.sort();
 		var c= ['error'],
 		z= y=0;
 		for(z in C){
-			//Remove duplicates
 			if(C[z - 1]!= C[z]){
 				c[y]= C[z];
 				y++;
@@ -254,7 +247,6 @@ function act(id, event){
 			z++;
 		}
 		z= 0;
-		//Encase in '""'
 		for(z in c){
 			c[z]= '"'+ c[z]+ '"';
 		}
@@ -265,9 +257,9 @@ function act(id, event){
 	c= C= y= z= st= i= upper= null;
 }
 function mark(s, b, Y){
-	if(st[i - 1]==s && st[i]!= s){
+	if(st[i - 1]== s && st[i]!= s){
 		while(Y< st.length - i){
-			if(st[i + Y]==s){
+			if(st[i + Y]== s){
 				st[i - 1]= '<'+ b+'>';
 				st[i + Y]= '</'+ b+'>';
 				break;
@@ -276,126 +268,12 @@ function mark(s, b, Y){
 		}
 	}
 }
-function Tag(Reg,tg, Y){
+function Tag(Reg, tg, Y){
 	if(done=== false && Reg.test(st[i])){
 		st[i]=tg;
 		if(tg==''){
 			st[i - 1]= st[i + Y]='';
 		}
 		done= true;
-	}
-}
-
-
-function css(){
-	if(document.getElementById('css').checked){
-		//Clear CSS
-		document.getElementById('rez').style.fontFamily='';
-		document.getElementById('rez').style.margin='';
-		document.getElementById('rez').style.textAlign='';
-	}
-	else{
-		document.getElementById('rez').style.fontFamily=" 'Kaushan Script'";
-		document.getElementById('rez').style.margin='auto 0';
-		document.getElementById('rez').style.textAlign='center';
-	}
-}
-function Sz(){
-	if(/(em|ex|%|px|cm|mm|in|pt|pc|ch|rem|vh|vw|vmin|vmax)/.test(document.getElementById('size').value)){
-		document.getElementById('rez').style.fontSize= document.getElementById('size').value;
-		if(!document.getElementById('css').checked){
-			document.getElementById('rez').style.fontFamily="'Kaushan Script'";
-		}
-	}
-	else{
-		document.getElementById('rez').style.fontSize='';
-	}
-}
-
-function openOp(){
-	document.getElementById('options').style.display= '';
-	document.getElementsByTagName('html')[0].style.overflow='hidden';
-}
-function closeOp(){
-	document.getElementById('options').style.display= 'none';
-	document.getElementsByTagName('html')[0].style.overflow='';
-}
-
-function openAv(){
-	document.getElementById('av').style.display= '';
-	document.getElementsByTagName('html')[0].style.overflow='hidden';
-}
-function closeAv(){
-	document.getElementById('av').style.display= 'none';
-	document.getElementsByTagName('html')[0].style.overflow='';
-}
-function setLt(){
-	lt.a= document.getElementById('ltA').value;
-	lt.b= document.getElementById('ltB').value;
-	lt.c= document.getElementById('ltC').value;
-	lt.d= document.getElementById('ltD').value;
-	lt.e= document.getElementById('ltE').value;
-	lt.f= document.getElementById('ltF').value;
-	lt.g= document.getElementById('ltG').value;
-	lt.h= document.getElementById('ltH').value;
-	lt.i= document.getElementById('ltI').value;
-	lt.j= document.getElementById('ltJ').value;
-	lt.k= document.getElementById('ltK').value;
-	lt.l= document.getElementById('ltL').value;
-	lt.m= document.getElementById('ltM').value;
-	lt.n= document.getElementById('ltN').value;
-	lt.o= document.getElementById('ltO').value;
-	lt.p= document.getElementById('ltP').value;
-	lt.q= document.getElementById('ltQ').value;
-	lt.r= document.getElementById('ltR').value;
-	lt.s= document.getElementById('ltS').value;
-	lt.t= document.getElementById('ltT').value;
-	lt.u= document.getElementById('ltU').value;
-	lt.v= document.getElementById('ltV').value;
-	lt.w= document.getElementById('ltW').value;
-	lt.x= document.getElementById('ltX').value;
-	lt.y= document.getElementById('ltY').value;
-	lt.z= document.getElementById('ltZ').value;
-}
-function reSetLt(){
-	document.getElementById('ltA').value= "ka";
-	document.getElementById('ltB').value= "ru";
-    document.getElementById('ltC').value= "mi";
-    document.getElementById('ltD').value= "te";
-    document.getElementById('ltE').value= "ku";
-    document.getElementById('ltF').value= "lu";
-    document.getElementById('ltG').value= "ji";
-    document.getElementById('ltH').value= "ri";
-    document.getElementById('ltI').value= "ki";
-    document.getElementById('ltJ').value= "zu";
-    document.getElementById('ltK').value= "me";
-    document.getElementById('ltL').value= "ta";
-    document.getElementById('ltM').value= "rin";
-    document.getElementById('ltN').value= "to";
-    document.getElementById('ltO').value= "mo";
-    document.getElementById('ltP').value= "no";
-    document.getElementById('ltQ').value= "ke";
-    document.getElementById('ltR').value= "shi";
-    document.getElementById('ltS').value= "ari";
-    document.getElementById('ltT').value= "chi";
-    document.getElementById('ltU').value= "do";
-    document.getElementById('ltV').value= "ru";
-    document.getElementById('ltW').value= "mei";
-    document.getElementById('ltX').value= "na";
-    document.getElementById('ltY').value= "fu";
-    document.getElementById('ltZ').value= "zi";
-	setLt();
-}
-function del(){
-	if(document.getElementById('string').value!= ''){
-		var r= confirm('Are you shure you want to delete your name?')
-		if(r){
-			document.getElementById('string').value= '';
-			document.getElementById('rez').innerHTML= '<small style="font:10vh Orbitron">Name not Defined</small>';
-		}
-	}
-	else{
-		document.getElementById('dl').innerHTML= 'No Value';
-		setTimeout(function(){document.getElementById('dl').innerHTML= 'Delete Name';}, 2000);
 	}
 }
