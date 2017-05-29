@@ -377,5 +377,34 @@ function setLt(){
 	lt.w= document.getElementById('ltW').value;
 	lt.x= document.getElementById('ltX').value;
 	lt.y= document.getElementById('ltY').value;
-	lt.z= document.getElementById('ltZ').value
+	lt.z= document.getElementById('ltZ').value;
+}
+function reSetLt(){
+	document.getElementById('ltA').value= "ka";
+	document.getElementById('ltB').value= "ru";
+    document.getElementById('ltC').value= "mi";
+    document.getElementById('ltD').value= "te";
+    document.getElementById('ltE').value= "ku";
+    document.getElementById('ltF').value= "lu";
+    document.getElementById('ltG').value= "ji";
+    document.getElementById('ltH').value= "ri";
+    document.getElementById('ltI').value= "ki";
+    document.getElementById('ltJ').value= "zu";
+    document.getElementById('ltK').value= "me";
+    document.getElementById('ltL').value= "ta";
+    document.getElementById('ltM').value= "rin";
+    document.getElementById('ltN').value= "to";
+    document.getElementById('ltO').value= "mo";
+    document.getElementById('ltP').value= "no";
+    document.getElementById('ltQ').value= "ke";
+    document.getElementById('ltR').value= "shi";
+    document.getElementById('ltS').value= "ari";
+    document.getElementById('ltT').value= "chi";
+    document.getElementById('ltU').value= "do";
+    document.getElementById('ltV').value= "ru";
+    document.getElementById('ltW').value= "mei";
+    document.getElementById('ltX').value= "na";
+    document.getElementById('ltY').value= "fu";
+    document.getElementById('ltZ').value= "zi";
+	setLt();
 }
