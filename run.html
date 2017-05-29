@@ -28,7 +28,7 @@
 			<p id="rez" style="font-size:150px; font-family:'Kaushan Script'; margin:auto 0; text-align:center">todotata</p>
 		</div>
 		<div id="options" style="display:none">
-			<button id="hide" style="position:fixed; top:0; right:0" onclick="closeOp()">
+			<button id="hide" class="esc" onclick="closeOp()">
 				Close
 			</button>
 			<h2 style="margin:0">
@@ -58,12 +58,13 @@
 			</div>
 		</div>
 		<div id="av" style="display:none">
-			<button style="position:fixed; top:0; right:0" onclick="closeAv()">Close</button>
+			<button class="esc" onclick="closeAv()">Close</button>
+			<button class="esc" style="top:80px" onclick="setLt()">Set</button>
 			<h1>
-				Warning Not implemented!
+				Set values for letters
 			</h1>
 			<div style="display:flex">
-			<table style="margin:20px">
+			<table class="mod">
 				<tr>
 					<th>Letter</th>
 					<th>Replacment</th>
@@ -121,7 +122,7 @@
 					<td><input  type="text" value="rin" id="ltM"/></td>
 				</tr>
 			</table>
-			<table style="margin:20px">
+			<table class="mod">
 				<tr>
 					<th>Letter</th>
 					<th>Replacment</th>

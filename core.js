@@ -1,6 +1,34 @@
 "strict mode";
 var st, i, upper, C, I, done, chk= [false, false],
 delta= 'null';
+var lt={
+	"a":"ka",
+	"b":"ru",
+	"c":"mi",
+	"d":"te",
+	"e":"ku",
+	"f":"lu",
+	"g":"ji",
+	"h":"ri",
+	"i":"ki",
+	"j":"zu",
+	"k":"me",
+	"l":"ta",
+	"m":"rin",
+	"n":"to",
+	"o":"mo",
+	"p":"no",
+	"q":"ke",
+	"r":"shi",
+	"s":"ari",
+	"t":"chi",
+	"u":"do",
+	"v":"ru",
+	"w":"mei",
+	"x":"na",
+	"y":"fu",
+	"z":"zi"
+}
 //window.addEventListener("beforeunload", function(event){event.returnValue= "";});
 function act(id, event){
 	st=document.getElementById('string').value;
@@ -117,83 +145,83 @@ function act(id, event){
 			st[i]= st[i].toLowerCase();
 		}
 		switch(st[i]){
-			case 'a':// on a
-				st[i]= 'ka';//change it too ka
-					break;//end
+			case 'a':
+				st[i]= lt.a;
+					break;
 			case 'b':
-				st[i]= 'zu';
+				st[i]= lt.b;
 					break;
 			case 'c':
-				st[i]= 'mi';
+				st[i]= lt.c;
 					break;
 			case 'd':
-				st[i]= 'te';
+				st[i]= lt.d;
 					break;
 			case 'e':
-				st[i]= 'ku';
+				st[i]= lt.e;
 					break;
 			case 'f':
-				st[i]= 'lu';
+				st[i]= lt.f;
 					break;
 			case 'g':
-				st[i]= 'ji';
+				st[i]= lt.g;
 					break;
 			case 'h':
-				st[i]= 'ri';
+				st[i]= lt.h;
 					break;
 			case 'i':
-				st[i]= 'ki';
+				st[i]= lt.i;
 					break;
 			case 'j':
-				st[i]= 'zu';
+				st[i]= lt.j;
 					break;
 			case 'k':
-				st[i]= 'me';
+				st[i]= lt.k;
 					break;
 			case 'l':
-				st[i]= 'ta';
+				st[i]= lt.l;
 					break;
 			case 'm':
-				st[i]= 'rin';
+				st[i]= lt.m;
 					break;
 			case 'n':
-				st[i]= 'to';
+				st[i]= lt.n;
 					break;
 			case 'o':
-				st[i]= 'mo';
+				st[i]= lt.o;
 					break;
 			case 'p':
-				st[i]= 'no';
+				st[i]= lt.p;
 					break;
 			case 'q':
-				st[i]= 'ke';
+				st[i]= lt.q;
 					break;
 			case 'r':
-				st[i]= 'shi';
+				st[i]= lt.r;
 					break;
 			case 's':
-				st[i]= 'ari';
+				st[i]= lt.s;
 					break;
 			case 't':
-				st[i]= 'chi';
+				st[i]= lt.t;
 					break;
 			case 'u':
-				st[i]= 'do';
+				st[i]= lt.u;
 					break;
 			case 'v':
-				st[i]= 'ru';
+				st[i]= lt.v;
 					break;
 			case 'w':
-				st[i]= 'mei';
+				st[i]= lt.w;
 					break;
 			case 'x':
-				st[i]= 'na';
+				st[i]= lt.x;
 					break;
 			case 'y':
-				st[i]= 'fu';
+				st[i]= lt.y;
 					break;
 			case 'z':
-				st[i]= 'zi';
+				st[i]= lt.z;
 					break;
 			case "(":
 			case ")":
@@ -322,4 +350,32 @@ function openAv(){
 function closeAv(){
 	document.getElementById('av').style.display= 'none';
 	document.getElementsByTagName('html')[0].style.overflow='';
+}
+function setLt(){
+	lt.a= document.getElementById('ltA').value;
+	lt.b= document.getElementById('ltB').value;
+	lt.c= document.getElementById('ltC').value;
+	lt.d= document.getElementById('ltD').value;
+	lt.e= document.getElementById('ltE').value;
+	lt.f= document.getElementById('ltF').value;
+	lt.g= document.getElementById('ltG').value;
+	lt.h= document.getElementById('ltH').value;
+	lt.i= document.getElementById('ltI').value;
+	lt.j= document.getElementById('ltJ').value;
+	lt.k= document.getElementById('ltK').value;
+	lt.l= document.getElementById('ltL').value;
+	lt.m= document.getElementById('ltM').value;
+	lt.n= document.getElementById('ltN').value;
+	lt.o= document.getElementById('ltO').value;
+	lt.p= document.getElementById('ltP').value;
+	lt.q= document.getElementById('ltQ').value;
+	lt.r= document.getElementById('ltR').value;
+	lt.s= document.getElementById('ltS').value;
+	lt.t= document.getElementById('ltT').value;
+	lt.u= document.getElementById('ltU').value;
+	lt.v= document.getElementById('ltV').value;
+	lt.w= document.getElementById('ltW').value;
+	lt.x= document.getElementById('ltX').value;
+	lt.y= document.getElementById('ltY').value;
+	lt.z= document.getElementById('ltZ').value
 }
