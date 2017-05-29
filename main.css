@@ -1,5 +1,6 @@
 @media print{
-	header,
+	noscript header,
+	nav,
 	.options,
 	#odd,
 	.prompt{
@@ -23,7 +24,7 @@
 		width:calc(100vw - 20px)
 	}
 }
-header{
+nav{
 	padding:10px;
 	margin:0;
 	height:6vh;
@@ -31,7 +32,7 @@ header{
 	overflow-y:auto;
     display:flex
 }
-header button{
+nav button{
 	height:100%;
 	margin:0 5px
 }
@@ -47,6 +48,12 @@ button:not(.not){
     background:cyan;
     border:solid lightgray 2.4px;
     border-radius:5px
+}
+noscript header{
+	font-size:50px;
+	color:white;
+	background:red;
+	height:10vh
 }
 footer{
 	background:gray;
