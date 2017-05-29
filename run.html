@@ -43,19 +43,45 @@
 			<h2 style="margin:0">
 				Options
 			</h2>
-			<div id="optCen">
-				"overide modification"<br/>
-				&lt;HTML tags&gt;<br/>
-				&unicode;<br/>
-				<hr/>
-				**<b>bold</b>**<br/>
-				`<mark>mark</mark>`<br/>
-				~<em>italic</em>~<br/>
-				_<u>underline</u>_<br/>
-				^<sup>superscript</sup>^<br/>
-				$<sub>subscript</sub>$<br/>
-				<span>overide modifiers </span><input type="checkbox" id="io" onclick="act('rez', event);"/>
-				<hr/>
+			<div class="opDiv" style="display:flex">
+				<div>
+					<p>
+						"disable"
+					</p>
+					<p>
+						&lt;HTML tags&gt;
+					</p>
+					<p>
+						&unicode;
+					</p>
+				</div>
+				<div style="margin:auto;">
+					<p>
+						**<b>bold</b>**
+					</p>
+					<p>
+						`<mark>mark</mark>`
+					</p>
+					<p>
+						~<em>italic</em>~
+					</p>
+				</div>
+				<div>
+					<p>
+						_<u>underline</u>_
+					</p>
+					<p>
+						^<sup>superscript</sup>^
+					</p>
+					<p>
+						$<sub>subscript</sub>$
+					</p>
+				</div>
+			</div>
+			<div class="opDiv">
+				<p>
+					<span>overide modifiers </span><input type="checkbox" id="io" onclick="act('rez', event);"/>
+				</p>
 				<p>
 					<span>font size </span><input type="text" value="150px" id="size" onchange="Sz()" title="Valid units em, ex, %, px, cm, mm, in, pt, pc, ch, rem, vh, vw, vmin, vmax"/>
 				</p>

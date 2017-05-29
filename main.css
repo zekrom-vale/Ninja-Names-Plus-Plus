@@ -95,11 +95,30 @@ body{
     font-size:20px
 }
 .mod input{
-	font:20px Arial
+	font:20px Arial;
+	width: 132px
 }
 .divAv{
 	display:grid;
 	background:lightblue;
 	padding:5px;
     border-radius:5px
+}
+.opDiv{
+	border:solid black 5px;
+	background:aliceblue;
+	margin:5px 0;
+	padding:5px 20px;
+	width:80vw
+}
+.opDiv p{
+	margin:0;
+	padding:0 10px
+}
+input[type="checkbox" i]{
+	width:24px;
+    height:24px;
+	position:relative;
+    bottom:-3px;
+    left:-9px
 }
