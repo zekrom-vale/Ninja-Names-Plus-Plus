@@ -1,12 +1,23 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-US" style='overflow:auto'>
 	<head>
+		<title>
+			Ninja Names (忍者の名前)
+		</title>
 		<link href='https://fonts.googleapis.com/css?family=Kaushan Script' rel='stylesheet'/>
 		<link href="main.css" rel="stylesheet"/>
 		<link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet'/>
 		<script src="core.js"></script>
 	</head>
 	<body>
+		<header>
+			<button onclick="openOp()">
+				Options
+			</button>
+			<button onclick="openAv()">
+				Advanced
+			</button>
+		</header>
 		<div class="div">
 			<span style="font-size:100px; text-align:center">
 				<span class="prompt">
@@ -16,9 +27,9 @@
 			</span>
 			<p id="rez" style="font-size:150px; font-family:'Kaushan Script'; margin:auto 0; text-align:center">todotata</p>
 		</div>
-		<div id="options" style="height:200px; overflow-y:scroll">
-			<button id="hide" style="position:absolute; left:270px" onclick="zero()">
-				hide
+		<div id="options" style="display:none">
+			<button id="hide" style="position:fixed; top:0; right:0" onclick="closeOp()">
+				Close
 			</button>
 			<h2 style="margin:0">
 				Options
@@ -44,6 +55,130 @@
 				<p>
 					<span>overide style (CSS) </span><input type="checkbox" id="css"onchange="css()"/>
 				</p>
+			</div>
+		</div>
+		<div id="av" style="display:none">
+			<button style="position:fixed; top:0; right:0" onclick="closeAv()">Close</button>
+			<h1>
+				Warning Not implemented!
+			</h1>
+			<div style="display:flex">
+			<table style="margin:20px">
+				<tr>
+					<th>Letter</th>
+					<th>Replacment</th>
+				</tr>
+				<tr>
+					<td>a</td>
+					<td><input  type="text" value="ka" id="ltA"/></td>
+				</tr>
+				<tr>
+					<td>b</td>
+					<td><input  type="text" value="ru" id="ltB"/></td>
+				</tr>
+				<tr>
+					<td>c</td>
+					<td><input  type="text" value="mi" id="ltC"/></td>
+				</tr>
+				<tr>
+					<td>d</td>
+					<td><input  type="text" value="te" id="ltD"/></td>
+				</tr>
+				<tr>
+					<td>e</td>
+					<td><input  type="text" value="ku" id="ltE"/></td>
+				</tr>
+				<tr>
+					<td>f</td>
+					<td><input  type="text" value="lu" id="ltF"/></td>
+				</tr>
+				<tr>
+					<td>g</td>
+					<td><input  type="text" value="ji" id="ltG"/></td>
+				</tr>
+				<tr>
+					<td>h</td>
+					<td><input  type="text" value="ri" id="ltH"/></td>
+				</tr>
+				<tr>
+					<td>i</td>
+					<td><input  type="text" value="ki" id="ltI"/></td>
+				</tr>
+				<tr>
+					<td>j</td>
+					<td><input  type="text" value="zu" id="ltJ"/></td>
+				</tr>
+				<tr>
+					<td>k</td>
+					<td><input  type="text" value="me" id="ltK"/></td>
+				</tr>
+				<tr>
+					<td>l</td>
+					<td><input  type="text" value="ta" id="ltL"/></td>
+				</tr>
+				<tr>
+					<td>m</td>
+					<td><input  type="text" value="rin" id="ltM"/></td>
+				</tr>
+			</table>
+			<table style="margin:20px">
+				<tr>
+					<th>Letter</th>
+					<th>Replacment</th>
+				</tr>
+				<tr>
+					<td>n</td>
+					<td><input  type="text" value="to" id="ltN"/></td>
+				</tr>
+				<tr>
+					<td>o</td>
+					<td><input  type="text" value="mo" id="ltO"/></td>
+				</tr>
+				<tr>
+					<td>p</td>
+					<td><input  type="text" value="no" id="ltP"/></td>
+				</tr>
+				<tr>
+					<td>q</td>
+					<td><input  type="text" value="ke" id="ltQ"/></td>
+				</tr>
+				<tr>
+					<td>r</td>
+					<td><input  type="text" value="shi" id="ltR"/></td>
+				</tr>
+				<tr>
+					<td>s</td>
+					<td><input  type="text" value="ari" id="ltS"/></td>
+				</tr>
+				<tr>
+					<td>t</td>
+					<td><input  type="text" value="chi" id="ltT"/></td>
+				</tr>
+				<tr>
+					<td>u</td>
+					<td><input  type="text" value="do" id="ltU"/></td>
+				</tr>
+				<tr>
+					<td>v</td>
+					<td><input  type="text" value="ru" id="ltV"/></td>
+				</tr>
+				<tr>
+					<td>w</td>
+					<td><input  type="text" value="mei" id="ltW"/></td>
+				</tr>
+				<tr>
+					<td>x</td>
+					<td><input  type="text" value="na" id="ltX"/></td>
+				</tr>
+				<tr>
+					<td>y</td>
+					<td><input  type="text" value="fu" id="ltY"/></td>
+				</tr>
+				<tr>
+					<td>z</td>
+					<td><input  type="text" value="zi" id="ltZ"/></td>
+				</tr>
+			</table>
 			</div>
 		</div>
 		<footer>

@@ -305,17 +305,21 @@ function Sz(){
 		document.getElementById('rez').style.fontSize='';
 	}
 }
-function zero(){
-	if(document.getElementById('optCen').style.display!=''){
-		document.getElementById('optCen').style.display= '';
-		document.getElementById('options').style.height= '200px';
-		document.getElementById('options').style.overflowY= 'scroll';
-		document.getElementById('hide').innerHTML= 'hide';
-	}
-	else{
-		document.getElementById('options').style.height= '';
-		document.getElementById('options').style.overflowY= '';
-		document.getElementById('optCen').style.display= 'none';
-		document.getElementById('hide').innerHTML= 'show';	
-	}
+
+function openOp(){
+	document.getElementById('options').style.display= '';
+	document.getElementsByTagName('html')[0].style.overflow='hidden';
+}
+function closeOp(){
+	document.getElementById('options').style.display= 'none';
+	document.getElementsByTagName('html')[0].style.overflow='';
+}
+
+function openAv(){
+	document.getElementById('av').style.display= '';
+	document.getElementsByTagName('html')[0].style.overflow='hidden';
+}
+function closeAv(){
+	document.getElementById('av').style.display= 'none';
+	document.getElementsByTagName('html')[0].style.overflow='';
 }

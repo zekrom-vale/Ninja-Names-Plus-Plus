@@ -22,6 +22,21 @@
 		width:calc(100vw - 20px)
 	}
 }
+header{
+	padding:10px;
+	margin:0;
+	height:5vh;
+	background:grey
+}
+header button{
+	cursor: pointer;
+	height:100%;
+    color:white;
+    background:cyan;
+    border:solid lightgray 2.4px;
+    border-radius:5px
+}
+
 footer{
 	background:gray;
 	width:100vw;
@@ -38,12 +53,16 @@ body{
 .div{
 	margin:10px
 }
+#av,
 #options{
-	width:300px;
-	margin:10px;
-	border:solid black 3px;
 	padding:5px;
-	overflow-x:hidden
+	z-index:99;
+	width:100vw;
+	height:100vh;
+	background:white;
+	position:absolute;
+    top:0;
+    left:0
 }
 #optCen p{
 	margin:0
