@@ -1,5 +1,5 @@
 "strict mode";
-var st, i, upper, C, I, done,
+var st, i, upper, C, I, done, conf,
 chk= [false, false],
 delta= 'null',
 lt={
@@ -299,17 +299,27 @@ function Tag(Reg, tg, Y){
 }
 function innerds(str){
 	if(done!= true && st[i]== str){
-		var textLog='',
-		strP= '</'+ str+ '>',
-		vI= i;
-		while(st.length> vI){
-			textLog+= st[vI];
-			if(textLog.includes(strP)){
-				i= vI;
-				done= 'skip';
-				break;
+		if(conf!= true || str== 'style'){
+			conf= confirm('Scripts (' +str +') may contain harmful functions, are you sure you want to proceed?')
+		}
+		if(conf=== true && str!= 'style'){
+			var textLog='',
+			strP= '</'+ str+ '>',
+			vI= i;
+			while(st.length> vI){
+				textLog+= st[vI];
+				if(textLog.includes(strP)){
+					i= vI;
+					done= 'skip';
+					break;
+				}
+				vI++;
 			}
-			vI++;
+		}
+		else{
+			st[i]='code';
+			//find /script
+			i++;
 		}
 	}
 }
