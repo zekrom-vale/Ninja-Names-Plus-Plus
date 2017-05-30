@@ -39,7 +39,7 @@ function act(id, event){
 		if(!chk[1]){
 			if(st[i - 1]=='*' && st[i - 2]== '*' && st[i]!= '*'){
 				while(Y< st.length - i){
-					if(st[i + Y]=='*' && st[i + Y + 1]== '*'){
+					if(st[i + Y]=='*' && st[i + Y + 1]== '*'   && st[i + Y - 1]!= '<' && st[i + Y - 1]!= '>'){
 						st[i - 1]= '<b>';
 						st[i + Y]= '</b>';
 						st[i - 2]= st[i + Y + 1]= '';
@@ -61,7 +61,7 @@ function act(id, event){
 			continue core;
 		}
 		if(st[i - 1]== '"' && st[i]!= '"'){
-			while(Y< st.length - i){
+			while(Y< st.length - i && st[Y]!= '<' && st[Y]!= '>'){
 				if(st[i + Y]== '"'){
 						st[i - 1]= st[i + Y]= '';
 					i+= Y;
@@ -258,7 +258,7 @@ function act(id, event){
 }
 function mark(s, b, Y){
 	if(st[i - 1]== s && st[i]!= s){
-		while(Y< st.length - i){
+		while(Y< st.length - i  && st[i + Y]!= '<' && st[i + Y]!= '>'){
 			if(st[i + Y]== s){
 				st[i - 1]= '<'+ b+'>';
 				st[i + Y]= '</'+ b+'>';
