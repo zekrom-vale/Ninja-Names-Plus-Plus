@@ -106,22 +106,9 @@ function act(id, event){
 					Tag(/^(head|body)/i,'div');
 					innerds('script');
 					innerds('style');
-					/*if(st[i]== 'script'){
-						var textLog='';
-						var vI= i;
-						while(st.length> vI){
-							textLog+= st[vI];
-							console.log(textLog);
-							console.log(i);
-							console.log(vI);
-							if(textLog.includes('</script>')){
-								i+= vI;
-								console.log('YES!')
-								continue core;
-							}
-							vI++;
-						}
-					}*/
+					innerds('iframe');
+					innerds('frame');
+					innerds('embed');
 					if(done=== true){//Must be === true
 						i+= Y;
 					}
@@ -254,6 +241,11 @@ function act(id, event){
 	if(st== ''){
 		st= '<small style="font:10vh Orbitron">Name not Defined</small>'
 	}
+	if(conf=== false){
+		//dd sd <script> sdd</script> zbcd
+		st= st.replace(/<(script|embed|iframe|frame)/gi, '<code');
+		st= st.replace(/<\/(script|embed|iframe|frame)>/gi, '</code>');
+	}
 	document.getElementById(id).innerHTML= st;
 	if(C!= ''){
 		C= C.sort();
@@ -299,10 +291,10 @@ function Tag(Reg, tg, Y){
 }
 function innerds(str){
 	if(done!= true && st[i]== str){
-		if(conf!= true || str== 'style'){
+		if(conf!= true && conf!= false && str!= 'style'){
 			conf= confirm('Scripts (' +str +') may contain harmful functions, are you sure you want to proceed?')
 		}
-		if(conf=== true && str!= 'style'){
+		if(conf=== true || str== 'style'){
 			var textLog='',
 			strP= '</'+ str+ '>',
 			vI= i;
@@ -317,8 +309,6 @@ function innerds(str){
 			}
 		}
 		else{
-			st[i]='code';
-			//find /script
 			i++;
 		}
 	}
