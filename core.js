@@ -104,7 +104,27 @@ function act(id, event){
 					else{st[i]= st[i].join('');}
 					Tag(/^(html|!DOCTYPE|meta)/i, '', Y);
 					Tag(/^(head|body)/i,'div');
-					i+= Y;
+					innerds('script');
+					innerds('style');
+					/*if(st[i]== 'script'){
+						var textLog='';
+						var vI= i;
+						while(st.length> vI){
+							textLog+= st[vI];
+							console.log(textLog);
+							console.log(i);
+							console.log(vI);
+							if(textLog.includes('</script>')){
+								i+= vI;
+								console.log('YES!')
+								continue core;
+							}
+							vI++;
+						}
+					}*/
+					if(done=== true){//Must be === true
+						i+= Y;
+					}
 					continue core;
 				}
 				Y++;
@@ -222,7 +242,7 @@ function act(id, event){
 				i++;
 				continue;
 		}
-		if(upper=== true){
+		if(upper){
 			st[i]= st[i].split('');
 			st[i][0]= st[i][0].toUpperCase();
 			st[i]= st[i].join('');
@@ -275,5 +295,21 @@ function Tag(Reg, tg, Y){
 			st[i - 1]= st[i + Y]='';
 		}
 		done= true;
+	}
+}
+function innerds(str){
+	if(done!= true && st[i]== str){
+		var textLog='',
+		strP= '</'+ str+ '>',
+		vI= i;
+		while(st.length> vI){
+			textLog+= st[vI];
+			if(textLog.includes(strP)){
+				i= vI;
+				done= 'skip';
+				break;
+			}
+			vI++;
+		}
 	}
 }
