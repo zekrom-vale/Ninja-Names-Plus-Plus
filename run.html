@@ -8,6 +8,7 @@
 		<link href='https://fonts.googleapis.com/css?family=Kaushan Script' rel='stylesheet'/>
 		<link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet'/>
 		<link href="main.css" rel="stylesheet"/>
+		<link href="color.css" rel="stylesheet"/>
 		<script src="core.js"></script>
 		<script src="Adv.js"></script>
 		<script src="kids.js"></script>
@@ -36,24 +37,24 @@
 				</span>
 				<input onkeyup="act('rez', event);" onclick="act('rez', event);" type="text" id="string" value="null"/>
 			</span>
-			<span>
-				<span>
+			<span class="noPrint">
+				<span class="color">
 					My favorite color is: 
 				</span>
 				<select id="color" onchange="color()">
-					<option value="respect">white</option>
-					<option value="responsibility">pink</option>
-					<option value="citizenship">red</option>
-					<option value="honesty">orange</option>
-					<option value="perseverance">yellow</option>
-					<option value="positivity" data-value="positive">green</option>
-					<option value="cooperation">blue</option>
-					<option value="courage">purple</option>
-					<option value="compassion">black</option>
+					<option value="respect" style="background:white">white</option>
+					<option value="responsibility" style="background:pink">pink</option>
+					<option value="citizenship"  style="background:red">red</option>
+					<option value="honesty" style="background:orange">orange</option>
+					<option value="perseverance" style="background:yellow">yellow</option>
+					<option value="positivity" data-value="positive" style="background:green; color:white">green</option>
+					<option value="cooperation" style="background:blue; color:white">blue</option>
+					<option value="courage" style="background:purple; color:white">purple</option>
+					<option value="compassion" style="background:black; color:white">black</option>
 				</select>
 			</span>
 			<p id="rez" style="font-family:'Kaushan Script'; margin:auto 0px; text-align:center">todotata</p>
-			<p> My supper secret ninja ability is <span id="ability">respect</span></p>
+			<p class="ninjaAbl"> My supper secret ninja ability is <span id="ability">respect</span></p>
 			
 		</div>
 		

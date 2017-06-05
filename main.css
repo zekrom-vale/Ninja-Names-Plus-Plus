@@ -1,4 +1,5 @@
 @media print{
+	.noPrint,
 	noscript header,
 	nav,
 	nav button,

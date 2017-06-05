@@ -1,0 +1,14 @@
+.ninjaAbl,
+.ninjaAbl span{
+	font:30px Arial
+}
+.color,
+#color{
+	font:30px Arial;
+	margin-top: 10px;
+}
+@media print{
+	.ninjaAbl{
+		text-align:center
+	}
+}
