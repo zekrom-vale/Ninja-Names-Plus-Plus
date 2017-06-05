@@ -10,6 +10,7 @@
 		<link href="main.css" rel="stylesheet"/>
 		<script src="core.js"></script>
 		<script src="Adv.js"></script>
+		<script src="kids.js"></script>
 	</head>
 	<body>
 	<noscript>
@@ -35,8 +36,31 @@
 				</span>
 				<input onkeyup="act('rez', event);" onclick="act('rez', event);" type="text" id="string" value="null"/>
 			</span>
+			<span>
+				<span>
+					My favorite color is: 
+				</span>
+				<select id="color" onchange="color()">
+					<option value="respect">white</option>
+					<option value="responsibility">pink</option>
+					<option value="citizenship">red</option>
+					<option value="honesty">orange</option>
+					<option value="perseverance">yellow</option>
+					<option value="positivity" data-value="positive">green</option>
+					<option value="cooperation">blue</option>
+					<option value="courage">purple</option>
+					<option value="compassion">black</option>
+				</select>
+			</span>
 			<p id="rez">todotata</p>
+			<p> My supper secret ninja ability is <span id="ability">respect</span></p>
+			
 		</div>
+		
+		
+		<!--End of main page-->
+		
+		
 		<div id="options" style="display:none">
 			<button id="hide" class="esc" onclick="closeOp()">
 				Close
