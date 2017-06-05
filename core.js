@@ -118,10 +118,11 @@ function act(id, event){
 			}
 		}
 		//if(!isNaN(st[i])){skip= true;}  //igrore numbers
-		if (st[i]== st[i].toUpperCase()){
+		if (st[i]== st[i].toUpperCase() && /\w/.test(st[i])){
 			upper= true;
 			st[i]= st[i].toLowerCase();
 		}
+		else upper= false;
 		switch(st[i]){
 			case 'a':
 				st[i]= lt.a;
