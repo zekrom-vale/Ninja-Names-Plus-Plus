@@ -118,7 +118,7 @@ function act(id, event){
 			}
 		}
 		//if(!isNaN(st[i])){skip= true;}  //igrore numbers
-		if (st[i]== st[i].toUpperCase() && /\w/.test(st[i])){
+		if (st[i]== st[i].toUpperCase()){
 			upper= true;
 			st[i]= st[i].toLowerCase();
 		}
@@ -229,7 +229,7 @@ function act(id, event){
 				i++;
 				continue;
 		}
-		if(upper){
+		if(upper== true){
 			st[i]= st[i].split('');
 			st[i][0]= st[i][0].toUpperCase();
 			st[i]= st[i].join('');
