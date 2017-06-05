@@ -16,7 +16,7 @@
 @media (min-width: 1200px){
 	#string{
 		font:100px Arial;
-		width:calc(100vw - 705px)
+		width:calc(100vw - 740px)
 	}
 }
 @media (max-width: 1199px){
