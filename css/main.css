@@ -73,7 +73,7 @@ body{
 	margin:0
 }
 #rez{
-	font-size:150px
+	font-size:135px
 }
 .div{
 	margin:10px
@@ -137,4 +137,7 @@ input[type="checkbox" i]{
 .opDiv.head h4{
 	padding:0;
 	margin:0
+}
+#string{
+	background-color: transparent
 }
