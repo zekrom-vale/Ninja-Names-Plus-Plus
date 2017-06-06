@@ -20,18 +20,18 @@
 	</head>
 	<body>
 	<noscript>
-		<header>
+		<header class="noPrint">
 			Java Script not enabled, this site will NOT work!
 		</header>
 	</noscript>
 	<!--[if IE]>
 	<ie class="noPrint">
 		<header>
-			Sorry, this was not desined for IE.  This site may NOT work!
+			Sorry, this was not designed for IE.  This site may NOT work!
 		</header>
 	</ie>
 	<![endif]-->
-		<nav>
+		<nav class="noPrint">
 			<button onclick="openOp()">
 				Options
 			</button>
@@ -44,7 +44,7 @@
 		</nav>
 		<div class="div">
 			<span style="font-size:100px; text-align:center">
-				<span class="prompt">
+				<span class="prompt noPrint">
 					Type your name:
 				</span>
 				<input onkeyup="act('rez', event);RanChar()" onclick="act('rez', event)" type="text" id="string" value="null"/>
@@ -79,7 +79,7 @@
 		<!--End of main page-->
 		
 		
-		<div id="options" style="display:none">
+		<div id="options" class="noPrint" style="display:none">
 			<button id="hide" class="esc" onclick="closeOp()">
 				Close
 			</button>
@@ -272,7 +272,7 @@
 			</div>
 		</div>
 		<footer>
-			<p id="odd">
+			<p id="odd" class="noPrint">
 				No Problem characters Detected
 			</p>
 		</footer>

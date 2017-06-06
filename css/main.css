@@ -1,11 +1,6 @@
 @media print{
 	.noPrint,
-	noscript header,
-	nav,
-	nav button,
-	.options,
-	#odd,
-	.prompt{
+	.noPrint button{
 		display:none
 	}
 	#string{
