@@ -211,7 +211,7 @@ function act(id, event){
 			case ")":
 			case ' ':
 			case "'":
-			case `"`:
+			case '"':
 			case '`':
 			case '_':
 			case '-':
@@ -329,7 +329,11 @@ function innerds(str){
 }
 
 
-function ran(m=1, o=0, M=1, O=0){
+function ran(m, o, M, O){
+	m= (typeof m!== 'undefined')?  m: 1;
+	o= (typeof o!== 'undefined')?  o: 0;
+	M= (typeof M!== 'undefined')?  M: 1;
+	O= (typeof O!== 'undefined')?  O: 0;
 	var R= Math.round(Math.random()*m +o)*M +O;
 	return R;
 }
