@@ -17,6 +17,13 @@ function RanChar(){
 	rep= parseInt(document.getElementById('color').value);
 	ch.splice(rep, 1);
 	var num= document.getElementById('string').value.length;
+	if(num== 0){
+		document.getElementById('ability').innerHTML= 'undefined';
+		document.getElementById('ability2').innerHTML= 'undefined';
+		return;
+	}
+	if(document.getElementById('ability').innerHTML== 'undefined' || document.getElementById('ability').innerHTML== 'undefined')color();
+	
 	num= num%8;
 	switch(num){
 		case 0:
