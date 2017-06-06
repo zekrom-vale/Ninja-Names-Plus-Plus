@@ -4,15 +4,9 @@ function color(){
 }
 function RanChar(){
 	var ch= [
-		'respect',
-		'responsibility',
-		'citizenship',
-		'honesty',
-		'perseverance',
-		'positivity',
-		'cooperation',
-		'courage',
-		'compassion'
+		'respect', 'responsibility', 'citizenship',
+		'honesty', 'perseverance', 'positivity',
+		'cooperation', 'courage', 'compassion'
 	],
 	rep= parseInt(document.getElementById('color').value);
 	ch.splice(rep, 1);

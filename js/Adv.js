@@ -18,9 +18,7 @@ function Sz(){
 			document.getElementById('rez').style.fontFamily="'Kaushan Script'";
 		}
 	}
-	else{
-		document.getElementById('rez').style.fontSize='';
-	}
+	else document.getElementById('rez').style.fontSize='';
 }
 
 function openOp(){
