@@ -28,30 +28,41 @@ function RanChar(){
 	switch(num){
 		case 0:
 			document.getElementById('ability2').innerHTML=ch[0];
-			return;
+			ch.splice(0, 1);
+			break;
 		case 1:
 			document.getElementById('ability2').innerHTML=ch[1];
-			return;
+			ch.splice(1, 1);
+			break;
 		case 2:
 			document.getElementById('ability2').innerHTML=ch[2];
-			return;
+			ch.splice(2, 1);
+			break;
 		case 3:
 			document.getElementById('ability2').innerHTML=ch[3];
-			return;
+			ch.splice(3, 1);
+			break;
 		case 4:
 			document.getElementById('ability2').innerHTML=ch[4];
-			return;
+			ch.splice(4, 1);
+			break;
 		case 5:
 			document.getElementById('ability2').innerHTML=ch[5];
-			return;
+			ch.splice(5, 1);
+			break;
 		case 6:
 			document.getElementById('ability2').innerHTML=ch[6];
-			return;
+			ch.splice(6, 1);
+			break;
 		case 7:
 			document.getElementById('ability2').innerHTML=ch[7];
-			return;
+			ch.splice(7, 1);
+			break;
 		default:
-			//document.getElementById('ability2').innerHTML=ch[/*Value*/];
-			return;
-	} 
+			document.getElementById('ability2').innerHTML=ch[ran(7)];
+			console.log('Error: Invalid length');
+			ch.splice(Ran, 1);
+			break;
+	}
+	console.log('My super duper secret ninja ability is '+ ch[ran(6)]+ '!');
 }

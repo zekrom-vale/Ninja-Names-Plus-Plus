@@ -242,6 +242,14 @@ function act(id, event){
 		}
 		i++;
 	}
+	
+	try{
+		clear();
+	} catch(err){}
+	try{
+		console.clear()
+	} catch(err){}
+	
 	console.log(st);
 	st= st.join('');
 	if(st== ''){
@@ -318,4 +326,10 @@ function innerds(str){
 			i++;
 		}
 	}
+}
+
+
+function ran(m=1, o=0, M=1, O=0){
+	var R= Math.round(Math.random()*m +o)*M +O;
+	return R;
 }
