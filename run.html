@@ -35,22 +35,22 @@
 				<span class="prompt">
 					Type your name:
 				</span>
-				<input onkeyup="act('rez', event);" onclick="act('rez', event);" type="text" id="string" value="null"/>
+				<input onkeyup="act('rez', event);RanChar()" onclick="act('rez', event)" type="text" id="string" value="null"/>
 			</span>
 			<span class="noPrint">
 				<span class="color">
 					My favorite color is: 
 				</span>
 				<select id="color" onchange="color()">
-					<option value="respect" style="background:white">white</option>
-					<option value="responsibility" style="background:pink">pink</option>
-					<option value="citizenship"  style="background:red">red</option>
-					<option value="honesty" style="background:orange">orange</option>
-					<option value="perseverance" style="background:yellow">yellow</option>
-					<option value="positivity" data-value="positive" style="background:green; color:white">green</option>
-					<option value="cooperation" style="background:blue; color:white">blue</option>
-					<option value="courage" style="background:purple; color:white">purple</option>
-					<option value="compassion" style="background:black; color:white">black</option>
+					<option value="respect" id="0" style="background:white">white</option>
+					<option value="responsibility" id="1" style="background:pink">pink</option>
+					<option value="citizenship" id="2"  style="background:red">red</option>
+					<option value="honesty" id="3" style="background:orange">orange</option>
+					<option value="perseverance" id="4" style="background:yellow">yellow</option>
+					<option value="positivity" data-value="positive" id="5" style="background:green; color:white">green</option>
+					<option value="cooperation" id="6" style="background:blue; color:white">blue</option>
+					<option value="courage"  id="7" style="background:purple; color:white">purple</option>
+					<option value="compassion" id="8" style="background:black; color:white">black</option>
 				</select>
 			</span>
 			
@@ -59,7 +59,7 @@
 			</h1>
 			
 			<p id="rez" style="font-family:'Kaushan Script'; margin:auto 0px; text-align:center">todotata</p>
-			<p class="ninjaAbl"> My supper secret ninja ability is <span id="ability">respect</span></p>
+			<p class="ninjaAbl"> My supper secret ninja ability is <span id="ability">respect</span> and <span id="ability2"></span></p>
 			
 		</div>
 		
