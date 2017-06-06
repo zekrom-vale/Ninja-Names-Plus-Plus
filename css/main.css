@@ -1,0 +1,140 @@
+@media print{
+	.noPrint,
+	noscript header,
+	nav,
+	nav button,
+	.options,
+	#odd,
+	.prompt{
+		display:none
+	}
+	#string{
+		border:none;
+		text-align:center;
+		text-decoration:underline;
+		font:75px Arial!important
+	}
+}
+@media (min-width: 1200px){
+	#string{
+		font:100px Arial;
+		width:calc(100vw - 740px)
+	}
+}
+@media (max-width: 1199px){
+	#string{
+		font:100px Arial;
+		width:calc(100vw - 20px)
+	}
+}
+nav{
+	padding:10px;
+	margin:0;
+	height:6vh;
+	background:grey;
+	overflow-y:auto;
+    display:flex
+}
+nav button{
+	height:100%;
+	margin:0 5px
+}
+
+.esc{
+	position:fixed;
+	top:30px;
+    right:30px
+}
+button:not(.not){
+	font-size:30px;
+	cursor:pointer;
+    color:white;
+    background:cyan;
+    border:solid lightgray 2.4px;
+    border-radius:5px
+}
+noscript header{
+	font-size:50px;
+	color:white;
+	background:red;
+	height:10vh
+}
+footer{
+	background:gray;
+	width:100vw;
+	margin:0
+}
+footer p{
+	text-align:center;
+	margin:0;
+	padding:20px
+}
+body{
+	margin:0
+}
+#rez{
+	font-size:150px
+}
+.div{
+	margin:10px
+}
+#av,
+#options{
+	padding:30px;
+	z-index:99;
+	width:100vw;
+	height:100vh;
+	background:white;
+	position:absolute;
+    top:0;
+    left:0;
+	font-size:30px
+}
+#size{
+	font-size:30px
+}
+#optCen p{
+	margin:0
+}
+.mod{
+	margin:auto;
+    font-size:20px
+}
+.mod input{
+	font:20px Arial;
+	width: 132px
+}
+.divAv{
+	display:grid;
+	background:lightblue;
+	padding:5px;
+    border-radius:5px
+}
+.opDiv{
+	border:solid black 5px;
+	background:aliceblue;
+	margin:0 5px 5px 0;
+	padding:5px 20px;
+	width:80vw
+}
+.opDiv p{
+	margin:0;
+	padding:0 10px
+}
+input[type="checkbox" i]{
+	width:24px;
+    height:24px;
+	position:relative;
+    bottom:-3px;
+    left:-9px
+}
+.opDiv.head{
+	border-bottom:none;
+	border-radius:5px 5px 0 0;
+	width:70px;
+	margin:20px 0 0
+}
+.opDiv.head h4{
+	padding:0;
+	margin:0
+}
