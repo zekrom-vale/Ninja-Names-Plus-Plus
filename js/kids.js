@@ -18,6 +18,14 @@ function RanChar(){
 	}
 	if(document.getElementById('ability').innerHTML== 'undefined' || document.getElementById('ability').innerHTML== 'undefined')color();
 	
+	try{
+		clear();
+	} catch(err){}
+	try{
+		console.clear()
+	} catch(err){}
+	
+	
 	num%= 8;
 	document.getElementById('ability2').innerHTML= ch[num];
 	ch.splice(num, 1);

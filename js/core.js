@@ -34,6 +34,7 @@ function act(id, event){
 		chk[1]= chk[0];
 		return;
 	}
+	RanChar();
 	chk[1]= chk[0]; delta= st; C= ['']; I= i=0;
 	st= st.split('');
 	var net=-50;
@@ -242,14 +243,6 @@ function act(id, event){
 		}
 		i++;
 	}
-	
-	try{
-		clear();
-	} catch(err){}
-	try{
-		console.clear()
-	} catch(err){}
-	
 	console.log(st);
 	st= st.join('');
 	if(st== ''){
