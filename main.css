@@ -11,7 +11,8 @@
 	#string{
 		border:none;
 		text-align:center;
-		text-decoration:underline
+		text-decoration:underline;
+		font:75px Arial!important
 	}
 }
 @media (min-width: 1200px){

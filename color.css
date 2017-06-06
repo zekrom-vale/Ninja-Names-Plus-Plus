@@ -9,6 +9,20 @@
 }
 @media print{
 	.ninjaAbl{
+		margin:0;
 		text-align:center
 	}
+	*{
+		margin:0;
+		padding:0
+	}
+}
+@media screen{
+	.noScreen{
+		display:none
+	}
+}
+.nameIs{
+	text-align:center;
+	font:50px 'Kaushan Script'
 }
