@@ -14,6 +14,11 @@ lt={
 //window.addEventListener("beforeunload", function(event){event.returnValue= "";});
 function act(id, event){
 	st=document.getElementById('string').value;
+	var bad= /(fuck|ass|god|      |cunt|bitch) /ig;
+	if(bad.test(st)){
+		st= st.replace(bad, '');
+		document.getElementById('string').value= st;
+	}
 	chk[0]= document.getElementById('io').checked;
 	if(	(
 			st== delta &&

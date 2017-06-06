@@ -1,6 +1,7 @@
 .ninjaAbl,
 .ninjaAbl span{
-	font:30px Arial
+	font:30px Arial;
+	text-align:center
 }
 .color,
 #color{
@@ -9,8 +10,7 @@
 }
 @media print{
 	.ninjaAbl{
-		margin:0;
-		text-align:center
+		margin:0
 	}
 	*{
 		margin:0;
