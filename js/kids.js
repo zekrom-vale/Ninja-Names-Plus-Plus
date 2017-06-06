@@ -1,5 +1,6 @@
 function color(){
-	document.getElementById('ability').innerHTML= document.getElementById('color').value;
+	var raw= /\D+/.exec(document.getElementById('color').value);
+	document.getElementById('ability').innerHTML= raw;
 }
 function RanChar(){
 	var ch= [
@@ -13,9 +14,9 @@ function RanChar(){
 		'courage',
 		'compassion'
 	],
-	rep= /[0-8]/.exec(document.getElementById('color').id.toString());
+	rep= parseInt(document.getElementById('color').value);
 	console.log(rep);
-	ch= ch.splice(rep, 1);
+	ch.splice(rep, 1);
 	console.log(ch);
 	var num= document.getElementById('string').value.length;
 	num= num%8;
