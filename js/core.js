@@ -20,22 +20,17 @@ function act(id, event){
 		document.getElementById('string').value= st;
 	}
 	chk[0]= document.getElementById('io').checked;
-	if(	(
-			st== delta &&
-			chk[0]== chk[1]
-		)||
-		(
-			chk[0]!= chk[1] &&(
-				st.match(/\W/g)== ' ' ||
-				st.match(/\W/g)== null
-			)
-		)
-	){
-		chk[1]= chk[0];
-		return;
+	if(st== delta){
+		if(chk[0]== chk[1]) return;
+		else if(/[^(\w| )]/g.test(st)){
+			chk[1]= chk[0];
+			return;
+		}
 	}
 	RanChar();
-	chk[1]= chk[0]; delta= st; C= ['']; I= i=0;
+	chk[1]= chk[0];
+	delta= st;
+	C= ['']; I= i=0;
 	st= st.split('');
 	var net=-50;
 	core:
