@@ -15,9 +15,7 @@ function RanChar(){
 		'compassion'
 	],
 	rep= parseInt(document.getElementById('color').value);
-	console.log(rep);
 	ch.splice(rep, 1);
-	console.log(ch);
 	var num= document.getElementById('string').value.length;
 	num= num%8;
 	switch(num){
