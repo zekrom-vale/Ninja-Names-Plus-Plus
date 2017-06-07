@@ -65,9 +65,6 @@ footer p{
 	margin:0;
 	padding:20px
 }
-body{
-	margin:0
-}
 #rez{
 	font-size:120px
 }
@@ -89,6 +86,7 @@ body{
 #size{
 	font-size:30px
 }
+body,
 #optCen p{
 	margin:0
 }
@@ -135,5 +133,5 @@ input[type="checkbox" i]{
 	margin:0
 }
 #string{
-	background-color: transparent
+	background:transparent
 }

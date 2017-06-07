@@ -1,4 +1,3 @@
-"strict mode";
 var st, i, upper, C, I, done, conf,
 chk= [false, false],
 trig= false,
