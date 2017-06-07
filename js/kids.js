@@ -17,7 +17,6 @@ function RanChar(){
 		return;
 	}
 	if(document.getElementById('ability').innerHTML== 'undefined' || document.getElementById('ability').innerHTML== 'undefined')color();
-	
 	try{
 		clear();
 	} catch(err){}

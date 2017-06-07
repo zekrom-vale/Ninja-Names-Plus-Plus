@@ -15,13 +15,21 @@ lt={
 function act(id, event){
 	st=document.getElementById('string').value;
 	//Filter
-	var bad= /(fuck|ass|god|cunt|bitch|dick|asshole|retard|gay|penis|boobs|boob)(?=(\W|\d|ed|es))/ig;
+	var bad= /(f+u+c+k+|a+s{2,}|god|cunt|b+i+t+c+h+|d+i+c+k+|retard|g+a+y+|penis|boob|stupid)(?=(\W|\d|ed|es|est|ful|ly|hole|s+\W|ies))/ig;
 	if(bad.test(st)){
 		st= st.replace(bad, '( ͡° ͜ʖ ͡°)');
 		document.getElementById('string').value= st;
 		document.getElementById('ability').innerHTML= 'being bad';
 		document.getElementById('ability2').innerHTML= 'nothing else';
+		document.getElementById('rez').innerHTML= '( ͡° ͜ʖ ͡°)';
+		document.getElementById('odd').innerHTML= 'Just change the text...';
 		return;
+	}
+	//Spam
+	var spam= /( {10,}|a{10,}|b{10,}|c{10,}|d{10,}|e{10,}|f{10,}|g{10,}|h{10,}|i{10,}|j{10,}|k{10,}|l{10,}|m{10,}|n{10,}|o{10,}|p{10,}|q{10,}|r{10,}|s{10,}|t{10,}|u{10,}|v{10,}|w{10,}|x{10,}|y{10,}|z{10,}|0{10,}|1{10,}|2{10,}|3{10,}|4{10,}|5{10,}|6{10,}|7{10,}|8{10,}|9{10,}|\!{10,}|\@{10,}|\#{10,}|\${10,}|\%{10,}|\^{10,}|\&{10,}|\*{10,}|\({10,}|\){10,}|\-{10,}|\+{10,}|\={10,}|'{10,}|"{10,}|\[{10,}|\]{10,}|\{{10,}|\}{10,}|\|{10,}|`{10,}|~{10,}|<{10,}|>{10,}|\,{10,}|\.{10,}|\/{10,}|;{10,}|:{10,}|\\{10,})/gi
+	if(spam.test(st)){
+		st= st.replace(spam, '');
+		document.getElementById('string').value= st;
 	}
 	chk[0]= document.getElementById('io').checked;
 	if(st== delta){
