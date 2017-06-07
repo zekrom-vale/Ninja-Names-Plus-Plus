@@ -1,6 +1,7 @@
 "strict mode";
 var st, i, upper, C, I, done, conf,
 chk= [false, false],
+trig= false,
 delta= 'null',
 lt={
 	"a":"ka", "b":"ru", "c":"mi", "d":"te",
@@ -15,7 +16,7 @@ lt={
 function act(id, event){
 	st=document.getElementById('string').value;
 	//Filter
-	var bad= /(f+u+c+k+|a+s{2,}|god|cunt|b+i+t+c+h+|d+i+c+k+|retard|g+a+y+|penis|boob|stupid)(?=(\W|\d|ed|es|est|ful|ly|hole|s+\W|ies))/ig;
+	var bad= /(f+u+c+k+|a+s{2,}|god|cunt|b+i+t+c+h+|d+i+c+k+|retard|g+a+y+|penis|boob|stupid)(?=(\W|\d|ed|es|est|ful|ly|hole|s+\W|ies))/igm;
 	if(bad.test(st)){
 		st= st.replace(bad, '( ͡° ͜ʖ ͡°)');
 		document.getElementById('string').value= st;
@@ -26,10 +27,14 @@ function act(id, event){
 		return;
 	}
 	//Spam
-	var spam= /( {10,}|a{10,}|b{10,}|c{10,}|d{10,}|e{10,}|f{10,}|g{10,}|h{10,}|i{10,}|j{10,}|k{10,}|l{10,}|m{10,}|n{10,}|o{10,}|p{10,}|q{10,}|r{10,}|s{10,}|t{10,}|u{10,}|v{10,}|w{10,}|x{10,}|y{10,}|z{10,}|0{10,}|1{10,}|2{10,}|3{10,}|4{10,}|5{10,}|6{10,}|7{10,}|8{10,}|9{10,}|\!{10,}|\@{10,}|\#{10,}|\${10,}|\%{10,}|\^{10,}|\&{10,}|\*{10,}|\({10,}|\){10,}|\-{10,}|\+{10,}|\={10,}|'{10,}|"{10,}|\[{10,}|\]{10,}|\{{10,}|\}{10,}|\|{10,}|`{10,}|~{10,}|<{10,}|>{10,}|\,{10,}|\.{10,}|\/{10,}|;{10,}|:{10,}|\\{10,})/gi
+	var spam= /( {10,}|a{10,}|b{10,}|c{10,}|d{10,}|e{10,}|f{10,}|g{10,}|h{10,}|i{10,}|j{10,}|k{10,}|l{10,}|m{10,}|n{10,}|o{10,}|p{10,}|q{10,}|r{10,}|s{10,}|t{10,}|u{10,}|v{10,}|w{10,}|x{10,}|y{10,}|z{10,}|0{10,}|1{10,}|2{10,}|3{10,}|4{10,}|5{10,}|6{10,}|7{10,}|8{10,}|9{10,}|\!{10,}|\@{5,}|\#{5,}|\${5,}|\%{5,}|\^{5,}|\&{5,}|\*{5,}|\({5,}|\){5,}|\-{5,}|\+{5,}|\={5,}|'{5,}|"{5,}|\[{5,}|\]{5,}|\{{5,}|\}{5,}|\|{5,}|`{5,}|~{5,}|<{5,}|>{5,}|\,{5,}|\.{5,}|\/{5,}|;{5,}|:{5,}|\\{5,})/gim
 	if(spam.test(st)){
 		st= st.replace(spam, '');
 		document.getElementById('string').value= st;
+	}
+	if(/.{1000,1050}/.test(st) && trig=== false){
+		alert("Don't you think that is too much?!");
+		trig= true;
 	}
 	chk[0]= document.getElementById('io').checked;
 	if(st== delta){
@@ -253,7 +258,8 @@ function act(id, event){
 	console.log(st);
 	st= st.join('');
 	if(st== ''){
-		st= '<small style="font:10vh Orbitron">Name not Defined</small>'
+		st= '<small style="font:10vh Orbitron">Name not Defined</small>';
+		trig= false;
 	}
 	if(conf=== false){
 		//dd sd <script> sdd</script> zbcd
