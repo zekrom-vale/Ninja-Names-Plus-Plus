@@ -10,14 +10,18 @@ lt={
 	"q":"ke", "r":"shi", "s":"ari", "t":"chi",
 	"u":"do", "v":"ru", "w":"mei", "x":"na",
 	"y":"fu", "z":"zi"
-}
+};
 //window.addEventListener("beforeunload", function(event){event.returnValue= "";});
 function act(id, event){
 	st=document.getElementById('string').value;
-	var bad= /(fuck|ass|god|      |cunt|bitch) /ig;
+	//Filter
+	var bad= /(fuck|ass|god|cunt|bitch|dick|asshole|retard|gay|penis|boobs|boob)(?=(\W|\d|ed|es))/ig;
 	if(bad.test(st)){
-		st= st.replace(bad, '');
+		st= st.replace(bad, '( ͡° ͜ʖ ͡°)');
 		document.getElementById('string').value= st;
+		document.getElementById('ability').innerHTML= 'being bad';
+		document.getElementById('ability2').innerHTML= 'nothing else';
+		return;
 	}
 	chk[0]= document.getElementById('io').checked;
 	if(st== delta){
