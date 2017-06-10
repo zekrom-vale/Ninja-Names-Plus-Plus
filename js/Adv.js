@@ -1,42 +1,41 @@
 function css(){
+	var x=document.getElementById('rez');
 	if(document.getElementById('css').checked){
 		//Clear CSS
-		document.getElementById('rez').style.fontFamily='';
-		document.getElementById('rez').style.margin='';
-		document.getElementById('rez').style.textAlign='';
+		x.style.fontFamily='';
+		x.style.margin='';
+		x.style.textAlign='';
 	}
 	else{
-		document.getElementById('rez').style.fontFamily=" 'Kaushan Script'";
-		document.getElementById('rez').style.margin='auto 0';
-		document.getElementById('rez').style.textAlign='center';
+		x.style.fontFamily=" 'Kaushan Script'";
+		x.style.margin='auto 0';
+		x.style.textAlign='center';
 	}
 }
 function Sz(){
 	if(/(em|ex|%|px|cm|mm|in|pt|pc|ch|rem|vh|vw|vmin|vmax)/.test(document.getElementById('size').value)){
 		document.getElementById('rez').style.fontSize= document.getElementById('size').value;
-		if(!document.getElementById('css').checked){
-			document.getElementById('rez').style.fontFamily="'Kaushan Script'";
-		}
+		if(!document.getElementById('css').checked)	document.getElementById('rez').style.fontFamily="'Kaushan Script'";
 	}
 	else document.getElementById('rez').style.fontSize='';
 }
 
 function openOp(){
 	document.getElementById('options').style.display= '';
-	document.getElementsByTagName('html')[0].style.overflow='hidden';
+	document.documentElement.style.overflow='hidden';
 }
 function closeOp(){
 	document.getElementById('options').style.display= 'none';
-	document.getElementsByTagName('html')[0].style.overflow='';
+	document.documentElement.style.overflow='';
 }
 
 function openAv(){
 	document.getElementById('av').style.display= '';
-	document.getElementsByTagName('html')[0].style.overflow='hidden';
+	document.documentElement.style.overflow='hidden';
 }
 function closeAv(){
 	document.getElementById('av').style.display= 'none';
-	document.getElementsByTagName('html')[0].style.overflow='';
+	document.documentElement.style.overflow='';
 }
 function setLt(){
 	lt.a= document.getElementById('ltA').value;
@@ -105,6 +104,6 @@ function del(){
 	}
 	else{
 		document.getElementById('dl').innerHTML= 'No Value';
-		setTimeout(function(){document.getElementById('dl').innerHTML= 'Delete Name';}, 2000);
+		setTimeout(()=>document.getElementById('dl').innerHTML= 'Delete Name', 2000);
 	}
 }

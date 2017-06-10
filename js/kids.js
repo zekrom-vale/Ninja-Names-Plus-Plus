@@ -22,7 +22,7 @@ function RanChar(){
 	} catch(err){}
 	try{
 		console.clear()
-	} catch(err){}
+	} finally{}
 	
 	
 	num%= 8;
