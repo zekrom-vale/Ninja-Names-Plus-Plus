@@ -1,6 +1,6 @@
-"strict mode";
 var st, i, upper, C, I, done, conf,
 chk= [false, false],
+trig= false,
 delta= 'null',
 lt={
 	"a":"ka", "b":"ru", "c":"mi", "d":"te",
@@ -10,26 +10,43 @@ lt={
 	"q":"ke", "r":"shi", "s":"ari", "t":"chi",
 	"u":"do", "v":"ru", "w":"mei", "x":"na",
 	"y":"fu", "z":"zi"
-}
-//window.addEventListener("beforeunload", function(event){event.returnValue= "";});
+};
+//window.addEventListener("beforeunload", (event)=>event.returnValue= "");
 function act(id, event){
 	st=document.getElementById('string').value;
-	chk[0]= document.getElementById('io').checked;
-	if(	(
-			st== delta &&
-			chk[0]== chk[1]
-		)||
-		(
-			chk[0]!= chk[1] &&(
-				st.match(/\W/g)== ' ' ||
-				st.match(/\W/g)== null
-			)
-		)
-	){
-		chk[1]= chk[0];
+	//Filter
+	var bad= /(f+u+c+k+|a+s{2,}|god|cunt|b+i+t+c+h+|d+i+c+k+|retard|g+a+y+|penis|boob|stupid)(?=(\W|\d|ed|es|est|ful|ly|hole|s+\W|ies))/igm;
+	if(bad.test(st)){
+		st= st.replace(bad, '( ͡° ͜ʖ ͡°)');
+		document.getElementById('string').value= st;
+		document.getElementById('ability').innerHTML= 'being bad';
+		document.getElementById('ability2').innerHTML= 'nothing else';
+		document.getElementById('rez').innerHTML= '( ͡° ͜ʖ ͡°)';
+		document.getElementById('odd').innerHTML= 'Just change the text...';
 		return;
 	}
-	chk[1]= chk[0]; delta= st; C= ['']; I= i=0;
+	//Spam
+/* 	var spam= /( {10,}|a{10,}|b{10,}|c{10,}|d{10,}|e{10,}|f{10,}|g{10,}|h{10,}|i{10,}|j{10,}|k{10,}|l{10,}|m{10,}|n{10,}|o{10,}|p{10,}|q{10,}|r{10,}|s{10,}|t{10,}|u{10,}|v{10,}|w{10,}|x{10,}|y{10,}|z{10,}|0{10,}|1{10,}|2{10,}|3{10,}|4{10,}|5{10,}|6{10,}|7{10,}|8{10,}|9{10,}|\!{10,}|\@{5,}|\#{5,}|\${5,}|\%{5,}|\^{5,}|\&{5,}|\*{5,}|\({5,}|\){5,}|\-{5,}|\+{5,}|\={5,}|'{5,}|"{5,}|\[{5,}|\]{5,}|\{{5,}|\}{5,}|\|{5,}|`{5,}|~{5,}|<{5,}|>{5,}|\,{5,}|\.{5,}|\/{5,}|;{5,}|:{5,}|\\{5,})/gim
+	if(spam.test(st)){
+		st= st.replace(spam, '');
+		document.getElementById('string').value= st;
+	} */
+	if(st.length>=1000 && trig=== false){
+		alert("Don't you think that is too much?!");
+		trig= true;
+	}
+	chk[0]= document.getElementById('io').checked;
+	if(st== delta){
+		if(chk[0]== chk[1]) return;
+		else if(/[^(\w| )]/g.test(st)){
+			chk[1]= chk[0];
+			return;
+		}
+	}
+	RanChar();
+	chk[1]= chk[0];
+	delta= st;
+	C= ['']; I= i=0;
 	st= st.split('');
 	var net=-50;
 	core:
@@ -109,19 +126,18 @@ function act(id, event){
 					innerds('iframe');
 					innerds('frame');
 					innerds('embed');
-					if(done=== true){//Must be === true
-						i+= Y;
-					}
+					if(done=== true) i+= Y;
 					continue core;
 				}
 				Y++;
 			}
 		}
-		//if(!isNaN(st[i])){skip= true;}  //igrore numbers
+		//if(!isNaN(st[i])) skip= true;  //igrore numbers
 		if (st[i]== st[i].toUpperCase() && /\w/.test(st[i])){
 			upper= true;
 			st[i]= st[i].toLowerCase();
 		}
+		else upper= false;
 		switch(st[i]){
 			case 'a':
 				st[i]= lt.a;
@@ -205,7 +221,7 @@ function act(id, event){
 			case ")":
 			case ' ':
 			case "'":
-			case `"`:
+			case '"':
 			case '`':
 			case '_':
 			case '-':
@@ -229,7 +245,7 @@ function act(id, event){
 				i++;
 				continue;
 		}
-		if(upper){
+		if(upper== true){
 			st[i]= st[i].split('');
 			st[i][0]= st[i][0].toUpperCase();
 			st[i]= st[i].join('');
@@ -239,10 +255,10 @@ function act(id, event){
 	console.log(st);
 	st= st.join('');
 	if(st== ''){
-		st= '<small style="font:10vh Orbitron">Name not Defined</small>'
+		st= '<small style="font:10vh Orbitron">Name not Defined</small>';
+		trig= false;
 	}
 	if(conf=== false){
-		//dd sd <script> sdd</script> zbcd
 		st= st.replace(/<(script|embed|iframe|frame)/gi, '<code');
 		st= st.replace(/<\/(script|embed|iframe|frame)>/gi, '</code>');
 	}
@@ -290,7 +306,7 @@ function Tag(Reg, tg, Y){
 	}
 }
 function innerds(str){
-	if(done!= true && st[i]== str){
+	if(done!== true && st[i]== str){
 		if(conf!= true && conf!= false && str!= 'style'){
 			conf= confirm('Scripts (' +str +') may contain harmful functions, are you sure you want to proceed?')
 		}
@@ -312,4 +328,15 @@ function innerds(str){
 			i++;
 		}
 	}
+}
+
+
+function ran(m, o, M, O){
+//function ran(m=1, o=0, M=1, O=0){ //standard new syntax
+	m= m!= undefined?  m: 1;
+	o= o!= undefined?  o: 0;
+	M= M!= undefined?  M: 1;
+	O= O!= undefined?  O: 0;
+	var R= Math.round(Math.random()*m +o)*M +O;
+	return R;
 }

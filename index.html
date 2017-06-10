@@ -1,23 +1,37 @@
 <!DOCTYPE html>
 <html lang="en-US">
 	<head>
+		<meta charset="UTF-8"/><!--Requied for IE and FF(FF also above title)-->
+		<meta name="discription" content="Convert your name to ninja!"/>
+		<meta name="keywords" content="convert,generator,name,ninja"/>
+		<meta name="author" content="zekrom_vale"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 		<title>
 			Ninja Names (忍者の名前)
 		</title>
 		<link rel="icon" href="data:image/svg+xml;base64,PCFET0NUWVBFIHN2ZyBQVUJMSUMgIi0vL1czQy8vRFREIFNWRyAyMDAxMDkwNC8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9UUi8yMDAxL1JFQy1TVkctMjAwMTA5MDQvRFREL3N2ZzEwLmR0ZCI+CjxzdmcgdmVyc2lvbj0iMS4wIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNDRweCIgaGVpZ2h0PSIxNDRweCIgdmlld0JveD0iMCAwIDIwMDAgMjAwMCIgcHJlc2VydmVBc3BlY3RSYXRpbz0ieE1pZFlNaWQgbWVldCI+CjxnIGlkPSJsYXllcjEiIGZpbGw9IiMwMDAwMDAiIHN0cm9rZT0ibm9uZSI+CiA8cGF0aCBkPSJNNzc1IDE3NDQgYy0xMSAtMiAtNDUgLTkgLTc1IC0xNSAtMTk5IC00MCAtNDAwIC0yMDAgLTQ5NSAtMzkzIC02MyAtMTI3IC03OSAtMTk3IC03OSAtMzM2IDAgLTEzNiAxNyAtMjEwIDc0IC0zMjUgMjI4IC00NjIgODMxIC01NjMgMTE5NSAtMjAwIDM0IDMzIDgxIDkxIDEwNSAxMjggbDQ0IDY3IDE2MyAwIGM4OSAwIDE2NCA0IDE2NyA5IDMgNCAtMTYgMjMgLTQxIDQxIGwtNDYgMzQgNDYgNDIgYzI1IDIzIDQzIDQ0IDQwIDQ4IC00IDMgLTY0IDYgLTEzNCA2IGwtMTI4IDAgNiAxMDggYzEwIDE4NiAtNDEgMzU0IC0xNTEgNDk5IC05MiAxMjIgLTI1NCAyMzAgLTQwMSAyNjkgLTU5IDE1IC0yNTAgMjggLTI5MCAxOHogbTcwNCAtNTI5IGMyNSAtNjcgNDMgLTE3NyAzOSAtMjM3IGwtMyAtNDMgLTY0NCAtMyAtNjQ0IC0yIDYgMTA3IGMzIDc0IDEyIDEyNyAyNyAxNzEgbDIyIDYyIDU4OCAwIDU4OSAwIDIwIC01NXoiLz4KIDxwYXRoIGQ9Ik01NjEgMTIwNSBjLTY5IC01OSAtNjEgLTE1NSAxNiAtMjA2IDY0IC00MiAxNTYgLTggMTgyIDY3IDE4IDUyIDkgODggLTM0IDEzMSAtMjkgMjkgLTQwIDMzIC04MyAzMyAtMzkgMCAtNTcgLTYgLTgxIC0yNXoiLz4KIDxwYXRoIGQ9Ik0xMDE1IDExOTUgYy0zMSAtMzIgLTM1IC00MiAtMzUgLTg3IDAgLTQ1IDQgLTU0IDM5IC04OSAzMiAtMzIgNDYgLTM5IDc3IC0zOSAxMjAgMCAxNzcgMTM4IDkwIDIxNyAtMzAgMjggLTQzIDMzIC04NiAzMyAtNDMgMCAtNTQgLTQgLTg1IC0zNXoiLz4KIDwvZz4KCjwvc3ZnPg==">
-		<link href='https://fonts.googleapis.com/css?family=Kaushan Script' rel='stylesheet'/>
-		<link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet'/>
-		<link href="main.css" rel="stylesheet"/>
-		<script src="core.js"></script>
-		<script src="Adv.js"></script>
+		<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Kaushan Script'/>
+		<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Orbitron'/>
+		<link href="css/main.css" rel="stylesheet"/>
+		<link href="css/color.css" rel="stylesheet"/>
+		<script src="js/core.js"></script>
+		<script src="js/Adv.js"></script>
+		<script src="js/kids.js"></script>
 	</head>
 	<body>
 	<noscript>
-		<header>
-			Java Script not enabled, this site will NOT work!
+		<header class="noPrint">
+			Did you know, this site is about 50% JavaScript!  So turn it on have it work!
 		</header>
 	</noscript>
-		<nav>
+	<!--[if IE]>
+	<ie class="noPrint">
+		<header>
+			Sorry, this was not designed for IE.  This site may NOT work!
+		</header>
+	</ie>
+	<![endif]-->
+		<nav class="noPrint">
 			<button onclick="openOp()">
 				Options
 			</button>
@@ -30,14 +44,42 @@
 		</nav>
 		<div class="div">
 			<span style="font-size:100px; text-align:center">
-				<span class="prompt">
+				<span class="prompt noPrint">
 					Type your name:
 				</span>
-				<input onkeyup="act('rez', event);" onclick="act('rez', event);" type="text" id="string" value="null"/>
+				<input onkeyup="act('rez', event)" onclick="act('rez', event)" type="text" id="string" value="null"/>
 			</span>
-			<p id="rez">todotata</p>
+			<span class="noPrint">
+				<span class="color">
+					My favorite color is: 
+				</span>
+				<select id="color" onchange="color();RanChar()">
+					<option value="0respect" style="background:white">white</option>
+					<option value="1responsibility" style="background:pink">pink</option>
+					<option value="2citizenship"  style="background:red">red</option>
+					<option value="3honesty" style="background:orange">orange</option>
+					<option value="4perseverance" style="background:yellow">yellow</option>
+					<option value="5positivity" data-value="positive" id="5" style="background:green; color:white">green</option>
+					<option value="6cooperation" style="background:blue" class="wh">blue</option>
+					<option value="7courage" style="background:purple" class="wh">purple</option>
+					<option value="8compassion" style="background:black" class="wh">black</option>
+				</select>
+			</span>
+			
+			<h1 class="noScreen nameIs">
+				My ninja name is:
+			</h1>
+			
+			<p id="rez" style="font-family:'Kaushan Script'; margin:auto 0px; text-align:center">todotata</p>
+			<p class="ninjaAbl"> My supper secret ninja ability is <span id="ability">respect</span> and <span id="ability2">positivity</span></p>
+			
 		</div>
-		<div id="options" style="display:none">
+		
+		
+		<!--End of main page-->
+		
+		
+		<div id="options" class="noPrint" style="display:none">
 			<button id="hide" class="esc" onclick="closeOp()">
 				Close
 			</button>
@@ -94,7 +136,7 @@
 					<span>overide modifiers </span><input type="checkbox" id="io" onclick="act('rez', event);"/>
 				</p>
 				<p>
-					<span>font size </span><input type="text" value="150px" id="size" onchange="Sz()" title="Valid units em, ex, %, px, cm, mm, in, pt, pc, ch, rem, vh, vw, vmin, vmax"/>
+					<span>font size </span><input type="text" value="120px" id="size" onchange="Sz()" title="Valid units: em, ex, %, px, cm, mm, in, pt, pc, ch, rem, vh, vw, vmin, vmax"/>
 				</p>
 				<p>
 					<span>overide style (CSS) </span><input type="checkbox" id="css"onchange="css()"/>
@@ -230,7 +272,7 @@
 			</div>
 		</div>
 		<footer>
-			<p id="odd">
+			<p id="odd" class="noPrint">
 				No Problem characters Detected
 			</p>
 		</footer>
