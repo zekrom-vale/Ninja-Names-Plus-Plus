@@ -15,6 +15,17 @@
 		left:50%;
 		transform:translate(-50%, -50%)
 	}
+	.add{
+		position:absolute;
+		bottom:0;
+		right:0;
+		height:250px
+	}
+}
+@media screen{
+	.noScreen{
+		display:none
+	}
 }
 @media (min-width: 1200px){
 	#string{
