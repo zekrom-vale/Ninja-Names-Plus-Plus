@@ -9,6 +9,12 @@
 		text-decoration:underline;
 		font:75px Arial!important
 	}
+	.div{
+		position:absolute;
+		top:40%;/*Ofset from top & left*/
+		left:50%;
+		transform:translate(-50%, -50%)
+	}
 }
 @media (min-width: 1200px){
 	#string{
