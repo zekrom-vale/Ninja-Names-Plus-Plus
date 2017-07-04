@@ -1,281 +1,281 @@
 <!DOCTYPE html>
 <html lang="en-US">
-	<head>
-		<meta charset="UTF-8"/>
-		<meta name="description" content="Convert your name to ninja style!"/>
-		<meta name="keywords" content="convert,generator,name,ninja"/>
-		<meta name="author" content="zekrom_vale"/>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-		<title>
-			Ninja Names (&#24525;&#32773;&#12398;&#21517;&#21069;)
-		</title>
-		<link rel="icon" href="data:image/svg+xml;base64,PCFET0NUWVBFIHN2Zz4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMDAwIDIwMDAiPjxwYXRoIGQ9Ik03NzUgMTc0NCBjLTExIC0yIC00NSAtOSAtNzUgLTE1IC0xOTkgLTQwIC00MDAgLTIwMCAtNDk1IC0zOTMgLTYzIC0xMjcgLTc5IC0xOTcgLTc5IC0zMzYgMCAtMTM2IDE3IC0yMTAgNzQgLTMyNSAyMjggLTQ2MiA4MzEgLTU2MyAxMTk1IC0yMDAgMzQgMzMgODEgOTEgMTA1IDEyOCBsNDQgNjcgMTYzIDAgYzg5IDAgMTY0IDQgMTY3IDkgMyA0IC0xNiAyMyAtNDEgNDEgbC00NiAzNCA0NiA0MiBjMjUgMjMgNDMgNDQgNDAgNDggLTQgMyAtNjQgNiAtMTM0IDYgbC0xMjggMCA2IDEwOCBjMTAgMTg2IC00MSAzNTQgLTE1MSA0OTkgLTkyIDEyMiAtMjU0IDIzMCAtNDAxIDI2OSAtNTkgMTUgLTI1MCAyOCAtMjkwIDE4eiBtNzA0IC01MjkgYzI1IC02NyA0MyAtMTc3IDM5IC0yMzcgbC0zIC00MyAtNjQ0IC0zIC02NDQgLTIgNiAxMDcgYzMgNzQgMTIgMTI3IDI3IDE3MSBsMjIgNjIgNTg4IDAgNTg5IDAgMjAgLTU1eiIvPjxjaXJjbGUgY3g9IjExMDAiIGN5PSIxMTAwIiByPSIxMjAiLz48Y2lyY2xlIGN4PSI2NTAiIGN5PSIxMTAwIiByPSIxMjAiLz48L3N2Zz4=">
-		<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Kaushan Script'/>
-		<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Orbitron'/>
-		<link href="css/main.css" rel="stylesheet"/>
-		<link href="css/color.css" rel="stylesheet"/>
-		<script src="js/core.js"></script>
-		<script src="js/Adv.js"></script>
-		<script src="js/kids.js"></script>
-	</head>
-	<body>
-	<noscript>
-		<header class="noPrint">
-			data:text/html;base64,RGlkIHlvdSBrbm93LCB0aGlzIHNpdGUgaXMgYWJvdXQgNTAlIEphdmFTY3JpcHQhICBTbyB0dXJuIGl0IG9uIGhhdmUgaXQgd29yayE=
-		</header>
-	</noscript>
-	<!--[if IE]>
-	<ie class="noPrint">
-		<header>
-			Sorry, this was not directly designed for IE &lt; 11.  This site may NOT work!
-		</header>
-	</ie>
-	<![endif]-->
-		<nav class="noPrint">
-			<button onclick="Open('options')">
-				Options
-			</button>
-			<button onclick="Open('av')">
-				Advanced
-			</button>
-			<button onclick="del()" style="background:red" id="dl">
-				Delete_Name
-			</button>
-		</nav>
-		<div class="div"><span></span><div>
-		<!--Thanks https://jsfiddle.net/Wexcode/axRxE/ for centering vertically-->
-			<span style="font-size:100px; text-align:center">
-				<span class="prompt noPrint">
-					Type your name:
-				</span>
-				<input onkeyup="act('rez', event)" onclick="act('rez', event)" type="text" id="string" value="null"/>
+<head>
+	<meta charset="UTF-8"/>
+	<meta name="description" content="Convert your name to ninja style!"/>
+	<meta name="keywords" content="convert,generator,name,ninja"/>
+	<meta name="author" content="zekrom_vale"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<title>
+		Ninja Names (&#24525;&#32773;&#12398;&#21517;&#21069;)
+	</title>
+	<link rel="icon" href="data:image/svg+xml;base64,PCFET0NUWVBFIHN2Zz4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMDAwIDIwMDAiPjxwYXRoIGQ9Ik03NzUgMTc0NCBjLTExIC0yIC00NSAtOSAtNzUgLTE1IC0xOTkgLTQwIC00MDAgLTIwMCAtNDk1IC0zOTMgLTYzIC0xMjcgLTc5IC0xOTcgLTc5IC0zMzYgMCAtMTM2IDE3IC0yMTAgNzQgLTMyNSAyMjggLTQ2MiA4MzEgLTU2MyAxMTk1IC0yMDAgMzQgMzMgODEgOTEgMTA1IDEyOCBsNDQgNjcgMTYzIDAgYzg5IDAgMTY0IDQgMTY3IDkgMyA0IC0xNiAyMyAtNDEgNDEgbC00NiAzNCA0NiA0MiBjMjUgMjMgNDMgNDQgNDAgNDggLTQgMyAtNjQgNiAtMTM0IDYgbC0xMjggMCA2IDEwOCBjMTAgMTg2IC00MSAzNTQgLTE1MSA0OTkgLTkyIDEyMiAtMjU0IDIzMCAtNDAxIDI2OSAtNTkgMTUgLTI1MCAyOCAtMjkwIDE4eiBtNzA0IC01MjkgYzI1IC02NyA0MyAtMTc3IDM5IC0yMzcgbC0zIC00MyAtNjQ0IC0zIC02NDQgLTIgNiAxMDcgYzMgNzQgMTIgMTI3IDI3IDE3MSBsMjIgNjIgNTg4IDAgNTg5IDAgMjAgLTU1eiIvPjxjaXJjbGUgY3g9IjExMDAiIGN5PSIxMTAwIiByPSIxMjAiLz48Y2lyY2xlIGN4PSI2NTAiIGN5PSIxMTAwIiByPSIxMjAiLz48L3N2Zz4=">
+	<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Kaushan Script'/>
+	<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Orbitron'/>
+	<link href="css/main.css" rel="stylesheet"/>
+	<link href="css/color.css" rel="stylesheet"/>
+	<script src="js/core.js"></script>
+	<script src="js/Adv.js"></script>
+	<script src="js/kids.js"></script>
+</head>
+<body>
+<noscript>
+	<header class="noPrint">
+		data:text/html;base64,RGlkIHlvdSBrbm93LCB0aGlzIHNpdGUgaXMgYWJvdXQgNTAlIEphdmFTY3JpcHQhICBTbyB0dXJuIGl0IG9uIGhhdmUgaXQgd29yayE=
+	</header>
+</noscript>
+<!--[if IE]>
+<ie class="noPrint">
+	<header>
+		Sorry, this was not directly designed for IE &lt; 11.  This site may NOT work!
+	</header>
+</ie>
+<![endif]-->
+	<nav class="noPrint">
+		<button onclick="Open('options');">
+			Options
+		</button>
+		<button onclick="Open('av');">
+			Advanced
+		</button>
+		<button onclick="del();" style="background:red" id="dl">
+			Delete_Name
+		</button>
+	</nav>
+	<div class="div"><span></span><div>
+	<!--Thanks https://jsfiddle.net/Wexcode/axRxE/ for centering vertically-->
+		<span style="font-size:100px; text-align:center">
+			<span class="prompt noPrint">
+				Type your name:
 			</span>
-			<span class="noPrint">
-				<span class="color">
-					My favorite color is: 
-				</span>
-				<select id="color" onchange="color();RanChar()">
-					<option value="0respect" style="background:white">white</option>
-					<option value="1responsibility" style="background:pink">pink</option>
-					<option value="2citizenship"  style="background:red">red</option>
-					<option value="3honesty" style="background:orange">orange</option>
-					<option value="4perseverance" style="background:yellow">yellow</option>
-					<option value="5positivity" style="background:green; color:white">green</option>
-					<option value="6cooperation" style="background:blue" class="wh">blue</option>
-					<option value="7courage" style="background:purple" class="wh">purple</option>
-					<option value="8compassion" style="background:black" class="wh">black</option>
-				</select>
+			<input onkeyup="act('rez', event)" onclick="act('rez', event)" type="text" id="string" value="null"/>
+		</span>
+		<span class="noPrint">
+			<span class="color">
+				My favorite color is: 
 			</span>
-			
-			<h1 class="noScreen nameIs">
-				My ninja name is:
-			</h1>
-			
-			<p id="rez" style="font-family:'Kaushan Script'; margin:auto 0px; text-align:center">todotata</p>
-			<p class="ninjaAbl"> My super secret ninja abilities are <span id="ability">respect</span> and <span id="ability2">positivity</span></p>
-			</div>
+			<select id="color" onchange="color();RanChar()">
+				<option value="0respect" style="background:white">white</option>
+				<option value="1responsibility" style="background:pink">pink</option>
+				<option value="2citizenship"  style="background:red">red</option>
+				<option value="3honesty" style="background:orange">orange</option>
+				<option value="4perseverance" style="background:yellow">yellow</option>
+				<option value="5positivity" style="background:green; color:white">green</option>
+				<option value="6cooperation" style="background:blue" class="wh">blue</option>
+				<option value="7courage" style="background:purple" class="wh">purple</option>
+				<option value="8compassion" style="background:black" class="wh">black</option>
+			</select>
+		</span>
+		
+		<h1 class="noScreen nameIs">
+			My ninja name is:
+		</h1>
+		
+		<p id="rez" style="font-family:'Kaushan Script'; margin:auto 0px; text-align:center">todotata</p>
+		<p class="ninjaAbl"> My super secret ninja abilities are <span id="ability">respect</span> and <span id="ability2">positivity</span></p>
 		</div>
-		
-		
-		<!--End of main page-->
-		
-		
-		<div id="options" class="noPrint" style="display:none">
-			<button id="hide" class="esc" onclick="Close('options')">
-				Close
-			</button>
-			<h3 style="margin:0">
-				Options
-			</h3>
-			<div class="opDiv head">
-				<h4>
-					Keys
-				</h4>
-			</div>
-			<div class="opDiv" style="display:flex">
-				<div>
-					<p>
-						"disable"
-					</p>
-					<p>
-						&lt;HTML tags&gt;
-					</p>
-					<p>
-						&amp;unicode;
-					</p>
-				</div>
-				<div style="margin:auto;">
-					<p>
-						**<b>bold</b>**
-					</p>
-					<p>
-						`<mark>mark</mark>`
-					</p>
-					<p>
-						~<em>italic</em>~
-					</p>
-				</div>
-				<div>
-					<p>
-						_<u>underline</u>_
-					</p>
-					<p>
-						^<sup>superscript</sup>^
-					</p>
-					<p>
-						$<sub>subscript</sub>$
-					</p>
-				</div>
-			</div>
-			<div class="opDiv head">
-				<h4>
-					Mods
-				</h4>
-			</div>
-			<div class="opDiv">
+	</div>
+	
+	
+	<!--End of main page-->
+	
+	
+	<div id="options" class="noPrint" style="display:none">
+		<button id="hide" class="esc" onclick="Close('options')">
+			Close
+		</button>
+		<h3 style="margin:0">
+			Options
+		</h3>
+		<div class="opDiv head">
+			<h4>
+				Keys
+			</h4>
+		</div>
+		<div class="opDiv" style="display:flex">
+			<div>
 				<p>
-					<span>override modifiers </span><input type="checkbox" id="io" onclick="act('rez', event);"/>
+					"disable"
 				</p>
 				<p>
-					<span>font size </span><input type="text" value="120px" id="size" onchange="Sz()" title="Valid units include, but not limited to: em, %, px, cm, mm, in, vh, vw and calc(function)"/>
+					&lt;HTML tags&gt;
 				</p>
 				<p>
-					<span>override style (CSS) </span><input type="checkbox" id="css"onchange="css()"/>
+					&amp;unicode;
+				</p>
+			</div>
+			<div style="margin:auto;">
+				<p>
+					**<b>bold</b>**
+				</p>
+				<p>
+					`<mark>mark</mark>`
+				</p>
+				<p>
+					~<em>italic</em>~
+				</p>
+			</div>
+			<div>
+				<p>
+					_<u>underline</u>_
+				</p>
+				<p>
+					^<sup>superscript</sup>^
+				</p>
+				<p>
+					$<sub>subscript</sub>$
 				</p>
 			</div>
 		</div>
-		<div id="av" style="display:none">
-			<div class="esc divAv">
-				<button onclick="Close('av')">Close</button>
-				<button onclick="setLt()" style="margin:5px 0">Set</button>
-				<button onclick="reSetLt()">Reset</button>
-			</div>
-			<h1>
-				Values
-			</h1>
-			<div style="display:flex">
-			<table class="mod">
-				<tr>
-					<th>Letter</th>
-					<th>Replacement</th>
-				</tr>
-				<tr>
-					<td>a</td>
-					<td><input value="ka" id="ltA"/></td>
-				</tr>
-				<tr>
-					<td>b</td>
-					<td><input value="ru" id="ltB"/></td>
-				</tr>
-				<tr>
-					<td>c</td>
-					<td><input value="mi" id="ltC"/></td>
-				</tr>
-				<tr>
-					<td>d</td>
-					<td><input value="te" id="ltD"/></td>
-				</tr>
-				<tr>
-					<td>e</td>
-					<td><input value="ku" id="ltE"/></td>
-				</tr>
-				<tr>
-					<td>f</td>
-					<td><input value="lu" id="ltF"/></td>
-				</tr>
-				<tr>
-					<td>g</td>
-					<td><input value="ji" id="ltG"/></td>
-				</tr>
-				<tr>
-					<td>h</td>
-					<td><input value="ri" id="ltH"/></td>
-				</tr>
-				<tr>
-					<td>i</td>
-					<td><input value="ki" id="ltI"/></td>
-				</tr>
-				<tr>
-					<td>j</td>
-					<td><input value="zu" id="ltJ"/></td>
-				</tr>
-				<tr>
-					<td>k</td>
-					<td><input value="me" id="ltK"/></td>
-				</tr>
-				<tr>
-					<td>l</td>
-					<td><input value="ta" id="ltL"/></td>
-				</tr>
-				<tr>
-					<td>m</td>
-					<td><input value="rin" id="ltM"/></td>
-				</tr>
-			</table>
-			<table class="mod">
-				<tr>
-					<th>Letter</th>
-					<th>Replacement</th>
-				</tr>
-				<tr>
-					<td>n</td>
-					<td><input value="to" id="ltN"/></td>
-				</tr>
-				<tr>
-					<td>o</td>
-					<td><input value="mo" id="ltO"/></td>
-				</tr>
-				<tr>
-					<td>p</td>
-					<td><input value="no" id="ltP"/></td>
-				</tr>
-				<tr>
-					<td>q</td>
-					<td><input value="ke" id="ltQ"/></td>
-				</tr>
-				<tr>
-					<td>r</td>
-					<td><input value="shi" id="ltR"/></td>
-				</tr>
-				<tr>
-					<td>s</td>
-					<td><input value="ari" id="ltS"/></td>
-				</tr>
-				<tr>
-					<td>t</td>
-					<td><input value="chi" id="ltT"/></td>
-				</tr>
-				<tr>
-					<td>u</td>
-					<td><input value="do" id="ltU"/></td>
-				</tr>
-				<tr>
-					<td>v</td>
-					<td><input value="ru" id="ltV"/></td>
-				</tr>
-				<tr>
-					<td>w</td>
-					<td><input value="mei" id="ltW"/></td>
-				</tr>
-				<tr>
-					<td>x</td>
-					<td><input value="na" id="ltX"/></td>
-				</tr>
-				<tr>
-					<td>y</td>
-					<td><input value="fu" id="ltY"/></td>
-				</tr>
-				<tr>
-					<td>z</td>
-					<td><input value="zi" id="ltZ"/></td>
-				</tr>
-			</table>
-			</div>
+		<div class="opDiv head">
+			<h4>
+				Mods
+			</h4>
 		</div>
-		<footer>
-			<p id="odd" class="noPrint">
-				No Problem characters Detected
+		<div class="opDiv">
+			<p>
+				<span>override modifiers </span><input type="checkbox" id="io" onclick="act('rez', event);"/>
 			</p>
-		</footer>
-	</body>
+			<p>
+				<span>font size </span><input type="text" value="120px" id="size" onchange="Sz()" title="Valid units include, but not limited to: em, %, px, cm, mm, in, vh, vw and calc(function)"/>
+			</p>
+			<p>
+				<span>override style (CSS) </span><input type="checkbox" id="css"onchange="css()"/>
+			</p>
+		</div>
+	</div>
+	<div id="av" style="display:none">
+		<div class="esc divAv">
+			<button onclick="Close('av')">Close</button>
+			<button onclick="setLt()" style="margin:5px 0">Set</button>
+			<button onclick="reSetLt()">Reset</button>
+		</div>
+		<h1>
+			Values
+		</h1>
+		<div style="display:flex">
+		<table class="mod">
+			<tr>
+				<th>Letter</th>
+				<th>Replacement</th>
+			</tr>
+			<tr>
+				<td>a</td>
+				<td><input value="ka" id="ltA"/></td>
+			</tr>
+			<tr>
+				<td>b</td>
+				<td><input value="ru" id="ltB"/></td>
+			</tr>
+			<tr>
+				<td>c</td>
+				<td><input value="mi" id="ltC"/></td>
+			</tr>
+			<tr>
+				<td>d</td>
+				<td><input value="te" id="ltD"/></td>
+			</tr>
+			<tr>
+				<td>e</td>
+				<td><input value="ku" id="ltE"/></td>
+			</tr>
+			<tr>
+				<td>f</td>
+				<td><input value="lu" id="ltF"/></td>
+			</tr>
+			<tr>
+				<td>g</td>
+				<td><input value="ji" id="ltG"/></td>
+			</tr>
+			<tr>
+				<td>h</td>
+				<td><input value="ri" id="ltH"/></td>
+			</tr>
+			<tr>
+				<td>i</td>
+				<td><input value="ki" id="ltI"/></td>
+			</tr>
+			<tr>
+				<td>j</td>
+				<td><input value="zu" id="ltJ"/></td>
+			</tr>
+			<tr>
+				<td>k</td>
+				<td><input value="me" id="ltK"/></td>
+			</tr>
+			<tr>
+				<td>l</td>
+				<td><input value="ta" id="ltL"/></td>
+			</tr>
+			<tr>
+				<td>m</td>
+				<td><input value="rin" id="ltM"/></td>
+			</tr>
+		</table>
+		<table class="mod">
+			<tr>
+				<th>Letter</th>
+				<th>Replacement</th>
+			</tr>
+			<tr>
+				<td>n</td>
+				<td><input value="to" id="ltN"/></td>
+			</tr>
+			<tr>
+				<td>o</td>
+				<td><input value="mo" id="ltO"/></td>
+			</tr>
+			<tr>
+				<td>p</td>
+				<td><input value="no" id="ltP"/></td>
+			</tr>
+			<tr>
+				<td>q</td>
+				<td><input value="ke" id="ltQ"/></td>
+			</tr>
+			<tr>
+				<td>r</td>
+				<td><input value="shi" id="ltR"/></td>
+			</tr>
+			<tr>
+				<td>s</td>
+				<td><input value="ari" id="ltS"/></td>
+			</tr>
+			<tr>
+				<td>t</td>
+				<td><input value="chi" id="ltT"/></td>
+			</tr>
+			<tr>
+				<td>u</td>
+				<td><input value="do" id="ltU"/></td>
+			</tr>
+			<tr>
+				<td>v</td>
+				<td><input value="ru" id="ltV"/></td>
+			</tr>
+			<tr>
+				<td>w</td>
+				<td><input value="mei" id="ltW"/></td>
+			</tr>
+			<tr>
+				<td>x</td>
+				<td><input value="na" id="ltX"/></td>
+			</tr>
+			<tr>
+				<td>y</td>
+				<td><input value="fu" id="ltY"/></td>
+			</tr>
+			<tr>
+				<td>z</td>
+				<td><input value="zi" id="ltZ"/></td>
+			</tr>
+		</table>
+		</div>
+	</div>
+	<footer>
+		<p id="odd" class="noPrint">
+			No Problem characters Detected
+		</p>
+	</footer>
+</body>
 </html>

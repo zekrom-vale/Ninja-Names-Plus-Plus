@@ -1,6 +1,5 @@
 function color(){
-	var raw= /\D+/.exec(document.getElementById('color').value);
-	document.getElementById('ability').innerHTML= raw;
+	document.getElementById('ability').innerHTML= /\D+/.exec(document.getElementById('color').value);
 }
 function RanChar(){
 	var ch= [
@@ -12,16 +11,19 @@ function RanChar(){
 	ch.splice(rep, 1);
 	var num= document.getElementById('string').value.length;
 	if(num==0){
-		document.getElementById('ability').innerHTML= document.getElementById('ability2').innerHTML= 'undefined';
+		with(document){
+			getElementById('ability').innerHTML= getElementById('ability2').innerHTML= 'undefined';
+		}
 		return;
 	}
-	if(document.getElementById('ability').innerHTML== 'undefined' || document.getElementById('ability2').innerHTML== 'undefined')color();
+	if(document.getElementById('ability').innerHTML== 'undefined' || document.getElementById('ability2').innerHTML== 'undefined') color();
 	try{
 		clear();
-	} catch(err){}
-	try{
-		console.clear()
-	} finally{}
+	}catch(e){
+		try{
+			console.clear()
+		}finally{}
+	}
 	num%= ch.length;
 	document.getElementById('ability2').innerHTML= ch[num];
 	ch.splice(num, 1);
