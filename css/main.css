@@ -17,13 +17,24 @@
 		height:calc(100vh - 206px);
 		position:relative;
 		top:-4px;
-		right:7px
+		right:7px;
+		vertical-align:middle;
+		display:inline-block;
 	}
 	.add{
 		position:absolute;
 		bottom:0;
 		right:0;
 		height:250px
+	}
+	.div>div{
+		vertical-align:middle;
+		display:inline-block;
+	}
+	.div>span{
+		height:100%;
+		vertical-align:middle;
+		display:inline-block;
 	}
 }
 @media screen{
