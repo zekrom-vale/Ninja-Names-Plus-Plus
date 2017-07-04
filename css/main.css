@@ -7,7 +7,39 @@
 		border:none;
 		text-align:center;
 		text-decoration:underline;
-		font:75px Arial!important
+		font:36px Arial!important;
+		margin:auto!important;
+		display:block;
+		width:calc(100vw - 206px)!important
+	}
+	.div{
+		margin:103px!important;
+		height:calc(100vh - 206px);
+		position:relative;
+		top:-4px;
+		right:7px;
+		vertical-align:middle;
+		display:inline-block;
+	}
+	.add{
+		position:absolute;
+		bottom:0;
+		right:0;
+		height:250px
+	}
+	.div>div{
+		vertical-align:middle;
+		display:inline-block;
+	}
+	.div>span{
+		height:100%;
+		vertical-align:middle;
+		display:inline-block;
+	}
+}
+@media screen{
+	.noScreen{
+		display:none
 	}
 }
 @media (min-width: 1200px){
@@ -66,7 +98,7 @@ footer p{
 	padding:20px
 }
 #rez{
-	font-size:120px
+	font-size:75px
 }
 .div{
 	margin:10px
