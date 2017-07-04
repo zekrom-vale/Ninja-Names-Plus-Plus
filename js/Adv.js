@@ -32,63 +32,49 @@ function Close(el){
 	}
 }
 function setLt(){
-	lt.a= document.getElementById('ltA').value;
-	lt.b= document.getElementById('ltB').value;
-	lt.c= document.getElementById('ltC').value;
-	lt.d= document.getElementById('ltD').value;
-	lt.e= document.getElementById('ltE').value;
-	lt.f= document.getElementById('ltF').value;
-	lt.g= document.getElementById('ltG').value;
-	lt.h= document.getElementById('ltH').value;
-	lt.i= document.getElementById('ltI').value;
-	lt.j= document.getElementById('ltJ').value;
-	lt.k= document.getElementById('ltK').value;
-	lt.l= document.getElementById('ltL').value;
-	lt.m= document.getElementById('ltM').value;
-	lt.n= document.getElementById('ltN').value;
-	lt.o= document.getElementById('ltO').value;
-	lt.p= document.getElementById('ltP').value;
-	lt.q= document.getElementById('ltQ').value;
-	lt.r= document.getElementById('ltR').value;
-	lt.s= document.getElementById('ltS').value;
-	lt.t= document.getElementById('ltT').value;
-	lt.u= document.getElementById('ltU').value;
-	lt.v= document.getElementById('ltV').value;
-	lt.w= document.getElementById('ltW').value;
-	lt.x= document.getElementById('ltX').value;
-	lt.y= document.getElementById('ltY').value;
-	lt.z= document.getElementById('ltZ').value;
+	lt={
+		'a': LT('A'), 'b': LT('B'), 'c': LT('C'),
+		'd': LT('D'), 'e': LT('E'), 'f': LT('F'),
+		'g': LT('G'), 'h': LT('H'), 'i': LT('I'),
+		'j': LT('J'), 'k': LT('K'), 'l': LT('L'),
+		'm': LT('M'), 'n': LT('N'), 'o': LT('O'),
+		'p': LT('P'), 'q': LT('Q'), 'r': LT('R'),
+		's': LT('S'), 't': LT('T'), 'u': LT('U'),
+		'v': LT('V'), 'w': LT('W'), 'x': LT('X'),
+		'y': LT('Y'), 'z': LT('Z')
+	}
+}
+function LT(s, def=true){
+	var val= document.getElementById('lt'+ s);
+	def== true? return val.value: return val;
 }
 function reSetLt(){
-	with(document){
-		getElementById('ltA').value= "ka";
-		getElementById('ltB').value= "ru";
-		getElementById('ltC').value= "mi";
-		getElementById('ltD').value= "te";
-		getElementById('ltE').value= "ku";
-		getElementById('ltF').value= "lu";
-		getElementById('ltG').value= "ji";
-		getElementById('ltH').value= "ri";
-		getElementById('ltI').value= "ki";
-		getElementById('ltJ').value= "zu";
-		getElementById('ltK').value= "me";
-		getElementById('ltL').value= "ta";
-		getElementById('ltM').value= "rin";
-		getElementById('ltN').value= "to";
-		getElementById('ltO').value= "mo";
-		getElementById('ltP').value= "no";
-		getElementById('ltQ').value= "ke";
-		getElementById('ltR').value= "shi";
-		getElementById('ltS').value= "ari";
-		getElementById('ltT').value= "chi";
-		getElementById('ltU').value= "do";
-		getElementById('ltV').value= "ru";
-		getElementById('ltW').value= "mei";
-		getElementById('ltX').value= "na";
-		getElementById('ltY').value= "fu";
-		getElementById('ltZ').value= "zi";
-	}
-	setLt();
+	lt.a= LT('A', 0).value= "ka";
+	lt.b= LT('B', 0).value= "ru";
+	lt.c= LT('C', 0).value= "mi";
+	lt.d= LT('D', 0).value= "te";
+	lt.e= LT('E', 0).value= "ku";
+	lt.f= LT('F', 0).value= "lu";
+	lt.g= LT('G', 0).value= "ji";
+	lt.h= LT('H', 0).value= "ri";
+	lt.i= LT('I', 0).value= "ki";
+	lt.j= LT('J', 0).value= "zu";
+	lt.k= LT('K', 0).value= "me";
+	lt.l= LT('L', 0).value= "ta";
+	lt.m= LT('M', 0).value= "rin";
+	lt.n= LT('N', 0).value= "to";
+	lt.o= LT('O', 0).value= "mo";
+	lt.p= LT('P', 0).value= "no";
+	lt.q= LT('Q', 0).value= "ke";
+	lt.r= LT('R', 0).value= "shi";
+	lt.s= LT('S', 0).value= "ari";
+	lt.t= LT('T', 0).value= "chi";
+	lt.u= LT('U', 0).value= "do";
+	lt.v= LT('V', 0).value= "ru";
+	lt.w= LT('W', 0).value= "mei";
+	lt.x= LT('X', 0).value= "na";
+	lt.y= LT('Y', 0).value= "fu";
+	lt.z= LT('Z', 0).value= "zi";
 }
 function del(){
 	if(document.getElementById('string').value!= ''){

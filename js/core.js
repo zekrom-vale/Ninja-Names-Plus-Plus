@@ -11,7 +11,7 @@ lt={
 	"u":"do", "v":"ru", "w":"mei", "x":"na",
 	"y":"fu", "z":"zi"
 };
-//window.addEventListener("beforeunload", (event)=>event.returnValue= "");
+//window.addEventListener("beforeunload", event=>event.returnValue= "");
 function act(id, event){
 	st=document.getElementById('string').value;
 	//Filter
@@ -19,16 +19,14 @@ function act(id, event){
 	if(bad.test(st)){
 		st= st.replace(bad, '( ͡° ͜ʖ ͡°)');
 		document.getElementById('string').value= st;
-		document.getElementById('ability').innerHTML= 'being bad';
-		document.getElementById('ability2').innerHTML= 'nothing else';
-		document.getElementById('rez').innerHTML= '( ͡° ͜ʖ ͡°)';
-		document.getElementById('odd').innerHTML= 'Just change the text...';
+		with(document){
+			getElementById('ability').innerHTML= 'being bad';
+			getElementById('ability2').innerHTML= 'nothing else';
+			getElementById('rez').innerHTML= '( ͡° ͜ʖ ͡°)';
+			getElementById('odd').innerHTML= 'Just change the text...';
+		}
 		return;
 	} */
-	if(st.length>=1000 && trig=== false){
-		alert("Don't you think that is too much?!");
-		trig= true;
-	}
 	chk[0]= document.getElementById('io').checked;
 	if(st== delta){
 		if(chk[0]== chk[1]) return;
@@ -40,7 +38,8 @@ function act(id, event){
 	RanChar();
 	chk[1]= chk[0];
 	delta= st;
-	C= ['']; I= i=0;
+	C= [''];
+	I= i=0;
 	st= st.split('');
 	var net=-50;
 	core:
@@ -50,7 +49,7 @@ function act(id, event){
 		if(!chk[1]){
 			if(st[i - 1]=='*' && st[i - 2]== '*' && st[i]!= '*'){
 				while(Y< st.length - i){
-					if(st[i + Y]=='*' && st[i + Y + 1]== '*'   && st[i + Y - 1]!= '<' && st[i + Y - 1]!= '>'){
+					if(st[i + Y]=='*' && st[i + Y + 1]== '*' && st[i + Y - 1]!= '<' && st[i + Y - 1]!= '>'){
 						st[i - 1]= '<b>';
 						st[i + Y]= '</b>';
 						st[i - 2]= st[i + Y + 1]= '';
@@ -105,7 +104,7 @@ function act(id, event){
 						Tag(/^(html)/i, '', Y);
 						Tag(/^(head|body)/i, '/div');
 						console.log(done);
-						if(done=== false){
+						if(done== false){
 							st[i]='/' +st[i];
 							done= true;
 						}
@@ -118,7 +117,7 @@ function act(id, event){
 					innerds('iframe');
 					innerds('frame');
 					innerds('embed');
-					if(done=== true) i+= Y;
+					if(done== true) i+= Y;
 					continue core;
 				}
 				Y++;
@@ -224,8 +223,8 @@ function act(id, event){
 				continue;
 			case undefined:
 			case null:
-				if(st[i]=== null){H= 'Null';}
-				else{H= 'Undefined';}
+				if(st[i]=== null) H= 'Null';
+				else H= 'Undefined';
 				console.log('"'+ H+ ' Value" Error');
 				C[I++]= H;
 				i++;
@@ -247,7 +246,7 @@ function act(id, event){
 		st= '<small style="font:10vh Orbitron">Name not Defined</small>';
 		trig= false;
 	}
-	if(conf=== false){
+	else if(conf=== false){
 		st= st.replace(/<(script|embed|iframe|frame)/gi, '<code');
 		st= st.replace(/<\/(script|embed|iframe|frame)>/gi, '</code>');
 	}
@@ -258,17 +257,12 @@ function act(id, event){
 		z= y=0;
 		for(z in C){
 			if(C[z - 1]!= C[z]){
-				c[y]= C[z];
+				c[y]= '"'+ C[z]+ '"';
 				y++;
 			}
-			z++;
 		}
 		z= 0;
-		for(z in c){
-			c[z]= '"'+ c[z]+ '"';
-		}
-		c= c.join(', ');
-		document.getElementById('odd').innerHTML= 'Problem characters: ['+ c+ ']';
+		document.getElementById('odd').innerHTML= 'Problem characters: ['+ c.join(', ')+ ']';
 	}
 	else{document.getElementById('odd').innerHTML= 'No Problem characters Detected';}
 	c= C= y= z= st= i= upper= null;
@@ -286,7 +280,7 @@ function mark(s, b, Y){
 	}
 }
 function Tag(Reg, tg, Y){
-	if(done=== false && Reg.test(st[i])){
+	if(done== false && Reg.test(st[i])){
 		st[i]=tg;
 		if(tg==''){
 			st[i - 1]= st[i + Y]='';
@@ -296,9 +290,7 @@ function Tag(Reg, tg, Y){
 }
 function innerds(str){
 	if(done!== true && st[i]== str){
-		if(conf!= true && conf!= false && str!= 'style'){
-			conf= confirm('Scripts (' +str +') may contain harmful functions, are you sure you want to proceed?')
-		}
+		if(conf!= true && conf!= false && str!= 'style') conf= confirm(`Scripts (${str}) may contain harmful functions, are you sure you want to proceed?`);
 		if(conf=== true || str== 'style'){
 			var textLog='',
 			strP= '</'+ str+ '>',
@@ -313,9 +305,7 @@ function innerds(str){
 				vI++;
 			}
 		}
-		else{
-			i++;
-		}
+		else i++;
 	}
 }
 
