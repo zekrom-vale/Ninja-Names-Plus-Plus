@@ -2,40 +2,34 @@ function css(){
 	var x=document.getElementById('rez');
 	if(document.getElementById('css').checked){
 		//Clear CSS
-		x.style.fontFamily='';
-		x.style.margin='';
-		x.style.textAlign='';
+		with(x.style){
+			fontFamily= margin= textAlign='';
+		}
 	}
 	else{
-		x.style.fontFamily=" 'Kaushan Script'";
-		x.style.margin='auto 0';
-		x.style.textAlign='center';
+		with(x.style){
+			fontFamily=" 'Kaushan Script'";
+			margin='auto 0';
+			textAlign='center';
+		}
 	}
 }
 function Sz(){
-	if(/(em|ex|%|px|cm|mm|in|pt|pc|ch|rem|vh|vw|vmin|vmax)/.test(document.getElementById('size').value)){
-		document.getElementById('rez').style.fontSize= document.getElementById('size').value;
-		if(!document.getElementById('css').checked)	document.getElementById('rez').style.fontFamily="'Kaushan Script'";
+	document.getElementById('rez').style.fontSize= document.getElementById('size').value;
+	if(!document.getElementById('css').checked)	document.getElementById('rez').style.fontFamily="'Kaushan Script'";
+}
+
+function Open(el){
+	with(document){
+		getElementById(el).style.display= '';
+		documentElement.style.overflow= 'hidden';
 	}
-	else document.getElementById('rez').style.fontSize='';
 }
-
-function openOp(){
-	document.getElementById('options').style.display= '';
-	document.documentElement.style.overflow='hidden';
-}
-function closeOp(){
-	document.getElementById('options').style.display= 'none';
-	document.documentElement.style.overflow='';
-}
-
-function openAv(){
-	document.getElementById('av').style.display= '';
-	document.documentElement.style.overflow='hidden';
-}
-function closeAv(){
-	document.getElementById('av').style.display= 'none';
-	document.documentElement.style.overflow='';
+function Close(el){
+	with(document){
+		getElementById(el).style.display= 'none';
+		documentElement.style.overflow= '';
+	}
 }
 function setLt(){
 	lt.a= document.getElementById('ltA').value;
@@ -66,40 +60,44 @@ function setLt(){
 	lt.z= document.getElementById('ltZ').value;
 }
 function reSetLt(){
-	document.getElementById('ltA').value= "ka";
-	document.getElementById('ltB').value= "ru";
-    document.getElementById('ltC').value= "mi";
-    document.getElementById('ltD').value= "te";
-    document.getElementById('ltE').value= "ku";
-    document.getElementById('ltF').value= "lu";
-    document.getElementById('ltG').value= "ji";
-    document.getElementById('ltH').value= "ri";
-    document.getElementById('ltI').value= "ki";
-    document.getElementById('ltJ').value= "zu";
-    document.getElementById('ltK').value= "me";
-    document.getElementById('ltL').value= "ta";
-    document.getElementById('ltM').value= "rin";
-    document.getElementById('ltN').value= "to";
-    document.getElementById('ltO').value= "mo";
-    document.getElementById('ltP').value= "no";
-    document.getElementById('ltQ').value= "ke";
-    document.getElementById('ltR').value= "shi";
-    document.getElementById('ltS').value= "ari";
-    document.getElementById('ltT').value= "chi";
-    document.getElementById('ltU').value= "do";
-    document.getElementById('ltV').value= "ru";
-    document.getElementById('ltW').value= "mei";
-    document.getElementById('ltX').value= "na";
-    document.getElementById('ltY').value= "fu";
-    document.getElementById('ltZ').value= "zi";
+	with(document){
+		getElementById('ltA').value= "ka";
+		getElementById('ltB').value= "ru";
+		getElementById('ltC').value= "mi";
+		getElementById('ltD').value= "te";
+		getElementById('ltE').value= "ku";
+		getElementById('ltF').value= "lu";
+		getElementById('ltG').value= "ji";
+		getElementById('ltH').value= "ri";
+		getElementById('ltI').value= "ki";
+		getElementById('ltJ').value= "zu";
+		getElementById('ltK').value= "me";
+		getElementById('ltL').value= "ta";
+		getElementById('ltM').value= "rin";
+		getElementById('ltN').value= "to";
+		getElementById('ltO').value= "mo";
+		getElementById('ltP').value= "no";
+		getElementById('ltQ').value= "ke";
+		getElementById('ltR').value= "shi";
+		getElementById('ltS').value= "ari";
+		getElementById('ltT').value= "chi";
+		getElementById('ltU').value= "do";
+		getElementById('ltV').value= "ru";
+		getElementById('ltW').value= "mei";
+		getElementById('ltX').value= "na";
+		getElementById('ltY').value= "fu";
+		getElementById('ltZ').value= "zi";
+	}
 	setLt();
 }
 function del(){
 	if(document.getElementById('string').value!= ''){
 		var r= confirm('Are you shure you want to delete your name?')
 		if(r){
-			document.getElementById('string').value= '';
-			document.getElementById('rez').innerHTML= '<small style="font:10vh Orbitron">Name not Defined</small>';
+			with(document){
+				getElementById('string').value= '';
+				getElementById('rez').innerHTML= '<small style="font:10vh Orbitron">Name not Defined</small>';
+			}
 		}
 	}
 	else{

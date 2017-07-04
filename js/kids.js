@@ -11,22 +11,19 @@ function RanChar(){
 	rep= parseInt(document.getElementById('color').value);
 	ch.splice(rep, 1);
 	var num= document.getElementById('string').value.length;
-	if(num== 0){
-		document.getElementById('ability').innerHTML= 'undefined';
-		document.getElementById('ability2').innerHTML= 'undefined';
+	if(num==0){
+		document.getElementById('ability').innerHTML= document.getElementById('ability2').innerHTML= 'undefined';
 		return;
 	}
-	if(document.getElementById('ability').innerHTML== 'undefined' || document.getElementById('ability').innerHTML== 'undefined')color();
+	if(document.getElementById('ability').innerHTML== 'undefined' || document.getElementById('ability2').innerHTML== 'undefined')color();
 	try{
 		clear();
 	} catch(err){}
 	try{
 		console.clear()
 	} finally{}
-	
-	
-	num%= 8;
+	num%= ch.length;
 	document.getElementById('ability2').innerHTML= ch[num];
 	ch.splice(num, 1);
-	console.log('My super duper secret ninja ability is '+ ch[ran(6)]+ '!');
+	console.log('My super duper secret ninja ability is '+ ch[ran(ch.length-1)]+ '!');
 }

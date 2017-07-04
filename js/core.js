@@ -15,7 +15,7 @@ lt={
 function act(id, event){
 	st=document.getElementById('string').value;
 	//Filter
-	var bad= /(f+u+c+k+|a+s{2,}|god|cunt|b+i+t+c+h+|d+i+c+k+|retard|g+a+y+|penis|boob|stupid)(?=(\W|\d|ed|es|est|ful|ly|hole|s+\W|ies))/igm;
+	/* var bad= /(f+u+c+k+|a+s{2,}|god|cunt|b+i+t+c+h+|d+i+c+k+|retard|g+a+y+|penis|boob|stupid)(?=(\W|\d|ed|es|est|ful|ly|hole|s+\W|ies))/igm;
 	if(bad.test(st)){
 		st= st.replace(bad, '( ͡° ͜ʖ ͡°)');
 		document.getElementById('string').value= st;
@@ -24,12 +24,6 @@ function act(id, event){
 		document.getElementById('rez').innerHTML= '( ͡° ͜ʖ ͡°)';
 		document.getElementById('odd').innerHTML= 'Just change the text...';
 		return;
-	}
-	//Spam
-/* 	var spam= /( {10,}|a{10,}|b{10,}|c{10,}|d{10,}|e{10,}|f{10,}|g{10,}|h{10,}|i{10,}|j{10,}|k{10,}|l{10,}|m{10,}|n{10,}|o{10,}|p{10,}|q{10,}|r{10,}|s{10,}|t{10,}|u{10,}|v{10,}|w{10,}|x{10,}|y{10,}|z{10,}|0{10,}|1{10,}|2{10,}|3{10,}|4{10,}|5{10,}|6{10,}|7{10,}|8{10,}|9{10,}|\!{10,}|\@{5,}|\#{5,}|\${5,}|\%{5,}|\^{5,}|\&{5,}|\*{5,}|\({5,}|\){5,}|\-{5,}|\+{5,}|\={5,}|'{5,}|"{5,}|\[{5,}|\]{5,}|\{{5,}|\}{5,}|\|{5,}|`{5,}|~{5,}|<{5,}|>{5,}|\,{5,}|\.{5,}|\/{5,}|;{5,}|:{5,}|\\{5,})/gim
-	if(spam.test(st)){
-		st= st.replace(spam, '');
-		document.getElementById('string').value= st;
 	} */
 	if(st.length>=1000 && trig=== false){
 		alert("Don't you think that is too much?!");
@@ -73,8 +67,7 @@ function act(id, event){
 		}
 		if(st[i - 1]== '%' &&  st[i]== '"'){
 			st[i - 1]= '';
-			st[i]= "''";
-			i++;
+			st[i++]= "''";
 			continue core;
 		}
 		if(st[i - 1]== '"' && st[i]!= '"'){
@@ -103,8 +96,7 @@ function act(id, event){
 					done= false;
 					while(X < Y){
 						st[i]+=st[i + X]
-						st[i + X]= '';
-						X++;
+						st[i + X++]= '';
 					}
 					st[i]=st[i].split('');
 					if(st[i][0]== '/'){
@@ -235,14 +227,11 @@ function act(id, event){
 				if(st[i]=== null){H= 'Null';}
 				else{H= 'Undefined';}
 				console.log('"'+ H+ ' Value" Error');
-				C[I]= H;
-				I++;
+				C[I++]= H;
 				i++;
 				continue;
 			default:
-				C[I]= st[i];
-				I++;
-				i++;
+				C[I++]= st[i++];
 				continue;
 		}
 		if(upper== true){
@@ -265,7 +254,7 @@ function act(id, event){
 	document.getElementById(id).innerHTML= st;
 	if(C!= ''){
 		C= C.sort();
-		var c= ['error'],
+		var c= [],
 		z= y=0;
 		for(z in C){
 			if(C[z - 1]!= C[z]){
@@ -331,12 +320,6 @@ function innerds(str){
 }
 
 
-function ran(m, o, M, O){
-//function ran(m=1, o=0, M=1, O=0){ //standard new syntax
-	m= m!= undefined?  m: 1;
-	o= o!= undefined?  o: 0;
-	M= M!= undefined?  M: 1;
-	O= O!= undefined?  O: 0;
-	var R= Math.round(Math.random()*m +o)*M +O;
-	return R;
+function ran(m=1, o=0, M=1, O=0){
+	return Math.round(Math.random()*m +o)*M +O;
 }
