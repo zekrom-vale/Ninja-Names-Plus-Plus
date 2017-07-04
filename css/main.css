@@ -7,13 +7,17 @@
 		border:none;
 		text-align:center;
 		text-decoration:underline;
-		font:75px Arial!important
+		font:36px Arial!important;
+		margin:auto!important;
+		display:block;
+		width:calc(100vw - 206px)!important
 	}
 	.div{
-		position:absolute;
-		top:40%;/*Ofset from top & left*/
-		left:50%;
-		transform:translate(-50%, -50%)
+		margin:103px!important;
+		height:calc(100vh - 206px);
+		position:relative;
+		top:-4px;
+		right:7px
 	}
 	.add{
 		position:absolute;
@@ -83,7 +87,7 @@ footer p{
 	padding:20px
 }
 #rez{
-	font-size:120px
+	font-size:75px
 }
 .div{
 	margin:10px
