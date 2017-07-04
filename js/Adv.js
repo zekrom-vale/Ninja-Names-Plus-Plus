@@ -46,7 +46,8 @@ function setLt(){
 }
 function LT(s, def=true){
 	var val= document.getElementById('lt'+ s);
-	def== true? return val.value: return val;
+	if(def== true) return val.value;
+	else return val;
 }
 function reSetLt(){
 	lt.a= LT('A', 0).value= "ka";
