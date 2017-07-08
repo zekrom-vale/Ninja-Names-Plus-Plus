@@ -17,13 +17,26 @@
 		margin:0;
 		padding:0
 	}
-	body{
-		background:url("certificate.jpg");
-		background-size:99vw 99vh
+	img#canvas{
+		width:99vw;
+		height:99vh;
+		z-index:0;
+		position:absolute
 	}
 }
+
 @media screen{
+	.actPrint{
+		position:fixed;
+		right:0;
+		top:0;
+		height:inherit;
+		margin:10px
+	}
 	.noScreen{
+		display:none
+	}
+	img#canvas{
 		display:none
 	}
 }
