@@ -2,104 +2,89 @@ function css(){
 	var x=document.getElementById('rez');
 	if(document.getElementById('css').checked){
 		//Clear CSS
-		x.style.fontFamily='';
-		x.style.margin='';
-		x.style.textAlign='';
+		with(x.style){
+			fontFamily= margin= textAlign='';
+		}
 	}
 	else{
-		x.style.fontFamily=" 'Kaushan Script'";
-		x.style.margin='auto 0';
-		x.style.textAlign='center';
+		with(x.style){
+			fontFamily=" 'Kaushan Script'";
+			margin='auto 0';
+			textAlign='center';
+		}
 	}
 }
 function Sz(){
-	if(/(em|ex|%|px|cm|mm|in|pt|pc|ch|rem|vh|vw|vmin|vmax)/.test(document.getElementById('size').value)){
-		document.getElementById('rez').style.fontSize= document.getElementById('size').value;
-		if(!document.getElementById('css').checked)	document.getElementById('rez').style.fontFamily="'Kaushan Script'";
+	document.getElementById('rez').style.fontSize= document.getElementById('size').value;
+	if(!document.getElementById('css').checked)	document.getElementById('rez').style.fontFamily="'Kaushan Script'";
+}
+
+function Open(el){
+	with(document){
+		getElementById(el).style.display= '';
+		documentElement.style.overflow= 'hidden';
 	}
-	else document.getElementById('rez').style.fontSize='';
 }
-
-function openOp(){
-	document.getElementById('options').style.display= '';
-	document.documentElement.style.overflow='hidden';
-}
-function closeOp(){
-	document.getElementById('options').style.display= 'none';
-	document.documentElement.style.overflow='';
-}
-
-function openAv(){
-	document.getElementById('av').style.display= '';
-	document.documentElement.style.overflow='hidden';
-}
-function closeAv(){
-	document.getElementById('av').style.display= 'none';
-	document.documentElement.style.overflow='';
+function Close(el){
+	with(document){
+		getElementById(el).style.display= 'none';
+		documentElement.style.overflow= '';
+	}
 }
 function setLt(){
-	lt.a= document.getElementById('ltA').value;
-	lt.b= document.getElementById('ltB').value;
-	lt.c= document.getElementById('ltC').value;
-	lt.d= document.getElementById('ltD').value;
-	lt.e= document.getElementById('ltE').value;
-	lt.f= document.getElementById('ltF').value;
-	lt.g= document.getElementById('ltG').value;
-	lt.h= document.getElementById('ltH').value;
-	lt.i= document.getElementById('ltI').value;
-	lt.j= document.getElementById('ltJ').value;
-	lt.k= document.getElementById('ltK').value;
-	lt.l= document.getElementById('ltL').value;
-	lt.m= document.getElementById('ltM').value;
-	lt.n= document.getElementById('ltN').value;
-	lt.o= document.getElementById('ltO').value;
-	lt.p= document.getElementById('ltP').value;
-	lt.q= document.getElementById('ltQ').value;
-	lt.r= document.getElementById('ltR').value;
-	lt.s= document.getElementById('ltS').value;
-	lt.t= document.getElementById('ltT').value;
-	lt.u= document.getElementById('ltU').value;
-	lt.v= document.getElementById('ltV').value;
-	lt.w= document.getElementById('ltW').value;
-	lt.x= document.getElementById('ltX').value;
-	lt.y= document.getElementById('ltY').value;
-	lt.z= document.getElementById('ltZ').value;
+	lt={
+		'a': LT('A'), 'b': LT('B'), 'c': LT('C'),
+		'd': LT('D'), 'e': LT('E'), 'f': LT('F'),
+		'g': LT('G'), 'h': LT('H'), 'i': LT('I'),
+		'j': LT('J'), 'k': LT('K'), 'l': LT('L'),
+		'm': LT('M'), 'n': LT('N'), 'o': LT('O'),
+		'p': LT('P'), 'q': LT('Q'), 'r': LT('R'),
+		's': LT('S'), 't': LT('T'), 'u': LT('U'),
+		'v': LT('V'), 'w': LT('W'), 'x': LT('X'),
+		'y': LT('Y'), 'z': LT('Z')
+	};
+}
+function LT(s, def=true){
+	var val= document.getElementById('lt'+ s);
+	if(def== true) return val.value;
+	else return val;
 }
 function reSetLt(){
-	document.getElementById('ltA').value= "ka";
-	document.getElementById('ltB').value= "ru";
-    document.getElementById('ltC').value= "mi";
-    document.getElementById('ltD').value= "te";
-    document.getElementById('ltE').value= "ku";
-    document.getElementById('ltF').value= "lu";
-    document.getElementById('ltG').value= "ji";
-    document.getElementById('ltH').value= "ri";
-    document.getElementById('ltI').value= "ki";
-    document.getElementById('ltJ').value= "zu";
-    document.getElementById('ltK').value= "me";
-    document.getElementById('ltL').value= "ta";
-    document.getElementById('ltM').value= "rin";
-    document.getElementById('ltN').value= "to";
-    document.getElementById('ltO').value= "mo";
-    document.getElementById('ltP').value= "no";
-    document.getElementById('ltQ').value= "ke";
-    document.getElementById('ltR').value= "shi";
-    document.getElementById('ltS').value= "ari";
-    document.getElementById('ltT').value= "chi";
-    document.getElementById('ltU').value= "do";
-    document.getElementById('ltV').value= "ru";
-    document.getElementById('ltW').value= "mei";
-    document.getElementById('ltX').value= "na";
-    document.getElementById('ltY').value= "fu";
-    document.getElementById('ltZ').value= "zi";
-	setLt();
+	lt.a= LT('A', 0).value= "ka";
+	lt.b= LT('B', 0).value= "ru";
+	lt.c= LT('C', 0).value= "mi";
+	lt.d= LT('D', 0).value= "te";
+	lt.e= LT('E', 0).value= "ku";
+	lt.f= LT('F', 0).value= "lu";
+	lt.g= LT('G', 0).value= "ji";
+	lt.h= LT('H', 0).value= "ri";
+	lt.i= LT('I', 0).value= "ki";
+	lt.j= LT('J', 0).value= "zu";
+	lt.k= LT('K', 0).value= "me";
+	lt.l= LT('L', 0).value= "ta";
+	lt.m= LT('M', 0).value= "rin";
+	lt.n= LT('N', 0).value= "to";
+	lt.o= LT('O', 0).value= "mo";
+	lt.p= LT('P', 0).value= "no";
+	lt.q= LT('Q', 0).value= "ke";
+	lt.r= LT('R', 0).value= "shi";
+	lt.s= LT('S', 0).value= "ari";
+	lt.t= LT('T', 0).value= "chi";
+	lt.u= LT('U', 0).value= "do";
+	lt.v= LT('V', 0).value= "ru";
+	lt.w= LT('W', 0).value= "mei";
+	lt.x= LT('X', 0).value= "na";
+	lt.y= LT('Y', 0).value= "fu";
+	lt.z= LT('Z', 0).value= "zi";
 }
 function del(){
 	if(document.getElementById('string').value!= ''){
 		var r= confirm('Are you shure you want to delete your name?')
 		if(r){
-			document.getElementById('string').value= '';
-			document.getElementById('rez').innerHTML= '<small style="font:10vh Orbitron">Name not Defined</small>';
+			with(document){
+				getElementById('string').value= '';
+				getElementById('rez').innerHTML= '<small style="font:10vh Orbitron">Name not Defined</small>';
+			}
 		}
 	}
 	else{

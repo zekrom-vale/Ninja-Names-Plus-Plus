@@ -11,30 +11,22 @@ lt={
 	"u":"do", "v":"ru", "w":"mei", "x":"na",
 	"y":"fu", "z":"zi"
 };
-//window.addEventListener("beforeunload", (event)=>event.returnValue= "");
+//window.addEventListener("beforeunload", event=>event.returnValue= "");
 function act(id, event){
 	st=document.getElementById('string').value;
 	//Filter
-	var bad= /(f+u+c+k+|a+s{2,}|god|cunt|b+i+t+c+h+|d+i+c+k+|retard|g+a+y+|penis|boob|stupid)(?=(\W|\d|ed|es|est|ful|ly|hole|s+\W|ies))/igm;
+	/* var bad= /(f+u+c+k+|a+s{2,}|god|cunt|b+i+t+c+h+|d+i+c+k+|retard|g+a+y+|penis|boob|stupid)(?=(\W|\d|ed|es|est|ful|ly|hole|s+\W|ies))/igm;
 	if(bad.test(st)){
 		st= st.replace(bad, '( ͡° ͜ʖ ͡°)');
 		document.getElementById('string').value= st;
-		document.getElementById('ability').innerHTML= 'being bad';
-		document.getElementById('ability2').innerHTML= 'nothing else';
-		document.getElementById('rez').innerHTML= '( ͡° ͜ʖ ͡°)';
-		document.getElementById('odd').innerHTML= 'Just change the text...';
+		with(document){
+			getElementById('ability').innerHTML= 'being bad';
+			getElementById('ability2').innerHTML= 'nothing else';
+			getElementById('rez').innerHTML= '( ͡° ͜ʖ ͡°)';
+			getElementById('odd').innerHTML= 'Just change the text...';
+		}
 		return;
-	}
-	//Spam
-/* 	var spam= /( {10,}|a{10,}|b{10,}|c{10,}|d{10,}|e{10,}|f{10,}|g{10,}|h{10,}|i{10,}|j{10,}|k{10,}|l{10,}|m{10,}|n{10,}|o{10,}|p{10,}|q{10,}|r{10,}|s{10,}|t{10,}|u{10,}|v{10,}|w{10,}|x{10,}|y{10,}|z{10,}|0{10,}|1{10,}|2{10,}|3{10,}|4{10,}|5{10,}|6{10,}|7{10,}|8{10,}|9{10,}|\!{10,}|\@{5,}|\#{5,}|\${5,}|\%{5,}|\^{5,}|\&{5,}|\*{5,}|\({5,}|\){5,}|\-{5,}|\+{5,}|\={5,}|'{5,}|"{5,}|\[{5,}|\]{5,}|\{{5,}|\}{5,}|\|{5,}|`{5,}|~{5,}|<{5,}|>{5,}|\,{5,}|\.{5,}|\/{5,}|;{5,}|:{5,}|\\{5,})/gim
-	if(spam.test(st)){
-		st= st.replace(spam, '');
-		document.getElementById('string').value= st;
 	} */
-	if(st.length>=1000 && trig=== false){
-		alert("Don't you think that is too much?!");
-		trig= true;
-	}
 	chk[0]= document.getElementById('io').checked;
 	if(st== delta){
 		if(chk[0]== chk[1]) return;
@@ -46,7 +38,8 @@ function act(id, event){
 	RanChar();
 	chk[1]= chk[0];
 	delta= st;
-	C= ['']; I= i=0;
+	C= [''];
+	I= i=0;
 	st= st.split('');
 	var net=-50;
 	core:
@@ -56,7 +49,7 @@ function act(id, event){
 		if(!chk[1]){
 			if(st[i - 1]=='*' && st[i - 2]== '*' && st[i]!= '*'){
 				while(Y< st.length - i){
-					if(st[i + Y]=='*' && st[i + Y + 1]== '*'   && st[i + Y - 1]!= '<' && st[i + Y - 1]!= '>'){
+					if(st[i + Y]=='*' && st[i + Y + 1]== '*' && st[i + Y - 1]!= '<' && st[i + Y - 1]!= '>'){
 						st[i - 1]= '<b>';
 						st[i + Y]= '</b>';
 						st[i - 2]= st[i + Y + 1]= '';
@@ -73,8 +66,7 @@ function act(id, event){
 		}
 		if(st[i - 1]== '%' &&  st[i]== '"'){
 			st[i - 1]= '';
-			st[i]= "''";
-			i++;
+			st[i++]= "''";
 			continue core;
 		}
 		if(st[i - 1]== '"' && st[i]!= '"'){
@@ -103,8 +95,7 @@ function act(id, event){
 					done= false;
 					while(X < Y){
 						st[i]+=st[i + X]
-						st[i + X]= '';
-						X++;
+						st[i + X++]= '';
 					}
 					st[i]=st[i].split('');
 					if(st[i][0]== '/'){
@@ -113,7 +104,7 @@ function act(id, event){
 						Tag(/^(html)/i, '', Y);
 						Tag(/^(head|body)/i, '/div');
 						console.log(done);
-						if(done=== false){
+						if(done== false){
 							st[i]='/' +st[i];
 							done= true;
 						}
@@ -126,7 +117,7 @@ function act(id, event){
 					innerds('iframe');
 					innerds('frame');
 					innerds('embed');
-					if(done=== true) i+= Y;
+					if(done== true) i+= Y;
 					continue core;
 				}
 				Y++;
@@ -232,17 +223,14 @@ function act(id, event){
 				continue;
 			case undefined:
 			case null:
-				if(st[i]=== null){H= 'Null';}
-				else{H= 'Undefined';}
+				if(st[i]=== null) H= 'Null';
+				else H= 'Undefined';
 				console.log('"'+ H+ ' Value" Error');
-				C[I]= H;
-				I++;
+				C[I++]= H;
 				i++;
 				continue;
 			default:
-				C[I]= st[i];
-				I++;
-				i++;
+				C[I++]= st[i++];
 				continue;
 		}
 		if(upper== true){
@@ -258,28 +246,23 @@ function act(id, event){
 		st= '<small style="font:10vh Orbitron">Name not Defined</small>';
 		trig= false;
 	}
-	if(conf=== false){
+	else if(conf=== false){
 		st= st.replace(/<(script|embed|iframe|frame)/gi, '<code');
 		st= st.replace(/<\/(script|embed|iframe|frame)>/gi, '</code>');
 	}
 	document.getElementById(id).innerHTML= st;
 	if(C!= ''){
 		C= C.sort();
-		var c= ['error'],
+		var c= [],
 		z= y=0;
 		for(z in C){
 			if(C[z - 1]!= C[z]){
-				c[y]= C[z];
+				c[y]= '"'+ C[z]+ '"';
 				y++;
 			}
-			z++;
 		}
 		z= 0;
-		for(z in c){
-			c[z]= '"'+ c[z]+ '"';
-		}
-		c= c.join(', ');
-		document.getElementById('odd').innerHTML= 'Problem characters: ['+ c+ ']';
+		document.getElementById('odd').innerHTML= 'Problem characters: ['+ c.join(', ')+ ']';
 	}
 	else{document.getElementById('odd').innerHTML= 'No Problem characters Detected';}
 	c= C= y= z= st= i= upper= null;
@@ -297,7 +280,7 @@ function mark(s, b, Y){
 	}
 }
 function Tag(Reg, tg, Y){
-	if(done=== false && Reg.test(st[i])){
+	if(done== false && Reg.test(st[i])){
 		st[i]=tg;
 		if(tg==''){
 			st[i - 1]= st[i + Y]='';
@@ -307,9 +290,7 @@ function Tag(Reg, tg, Y){
 }
 function innerds(str){
 	if(done!== true && st[i]== str){
-		if(conf!= true && conf!= false && str!= 'style'){
-			conf= confirm('Scripts (' +str +') may contain harmful functions, are you sure you want to proceed?')
-		}
+		if(conf!= true && conf!= false && str!= 'style') conf= confirm(`Scripts (${str}) may contain harmful functions, are you sure you want to proceed?`);
 		if(conf=== true || str== 'style'){
 			var textLog='',
 			strP= '</'+ str+ '>',
@@ -324,19 +305,11 @@ function innerds(str){
 				vI++;
 			}
 		}
-		else{
-			i++;
-		}
+		else i++;
 	}
 }
 
 
-function ran(m, o, M, O){
-//function ran(m=1, o=0, M=1, O=0){ //standard new syntax
-	m= m!= undefined?  m: 1;
-	o= o!= undefined?  o: 0;
-	M= M!= undefined?  M: 1;
-	O= O!= undefined?  O: 0;
-	var R= Math.round(Math.random()*m +o)*M +O;
-	return R;
+function ran(m=1, o=0, M=1, O=0){
+	return Math.round(Math.random()*m +o)*M +O;
 }

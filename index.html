@@ -1,280 +1,305 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en-US">
-	<head>
-		<meta charset="UTF-8"/>
-		<meta name="discription" content="Convert your name to ninja!"/>
-		<meta name="keywords" content="convert,generator,name,ninja"/>
-		<meta name="author" content="zekrom_vale"/>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-		<title>
-			Ninja Names (忍者の名前)
-		</title>
-		<link rel="icon" href="data:image/svg+xml;base64,PCFET0NUWVBFIHN2ZyBQVUJMSUMgIi0vL1czQy8vRFREIFNWRyAyMDAxMDkwNC8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9UUi8yMDAxL1JFQy1TVkctMjAwMTA5MDQvRFREL3N2ZzEwLmR0ZCI+CjxzdmcgdmVyc2lvbj0iMS4wIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNDRweCIgaGVpZ2h0PSIxNDRweCIgdmlld0JveD0iMCAwIDIwMDAgMjAwMCIgcHJlc2VydmVBc3BlY3RSYXRpbz0ieE1pZFlNaWQgbWVldCI+CjxnIGlkPSJsYXllcjEiIGZpbGw9IiMwMDAwMDAiIHN0cm9rZT0ibm9uZSI+CiA8cGF0aCBkPSJNNzc1IDE3NDQgYy0xMSAtMiAtNDUgLTkgLTc1IC0xNSAtMTk5IC00MCAtNDAwIC0yMDAgLTQ5NSAtMzkzIC02MyAtMTI3IC03OSAtMTk3IC03OSAtMzM2IDAgLTEzNiAxNyAtMjEwIDc0IC0zMjUgMjI4IC00NjIgODMxIC01NjMgMTE5NSAtMjAwIDM0IDMzIDgxIDkxIDEwNSAxMjggbDQ0IDY3IDE2MyAwIGM4OSAwIDE2NCA0IDE2NyA5IDMgNCAtMTYgMjMgLTQxIDQxIGwtNDYgMzQgNDYgNDIgYzI1IDIzIDQzIDQ0IDQwIDQ4IC00IDMgLTY0IDYgLTEzNCA2IGwtMTI4IDAgNiAxMDggYzEwIDE4NiAtNDEgMzU0IC0xNTEgNDk5IC05MiAxMjIgLTI1NCAyMzAgLTQwMSAyNjkgLTU5IDE1IC0yNTAgMjggLTI5MCAxOHogbTcwNCAtNTI5IGMyNSAtNjcgNDMgLTE3NyAzOSAtMjM3IGwtMyAtNDMgLTY0NCAtMyAtNjQ0IC0yIDYgMTA3IGMzIDc0IDEyIDEyNyAyNyAxNzEgbDIyIDYyIDU4OCAwIDU4OSAwIDIwIC01NXoiLz4KIDxwYXRoIGQ9Ik01NjEgMTIwNSBjLTY5IC01OSAtNjEgLTE1NSAxNiAtMjA2IDY0IC00MiAxNTYgLTggMTgyIDY3IDE4IDUyIDkgODggLTM0IDEzMSAtMjkgMjkgLTQwIDMzIC04MyAzMyAtMzkgMCAtNTcgLTYgLTgxIC0yNXoiLz4KIDxwYXRoIGQ9Ik0xMDE1IDExOTUgYy0zMSAtMzIgLTM1IC00MiAtMzUgLTg3IDAgLTQ1IDQgLTU0IDM5IC04OSAzMiAtMzIgNDYgLTM5IDc3IC0zOSAxMjAgMCAxNzcgMTM4IDkwIDIxNyAtMzAgMjggLTQzIDMzIC04NiAzMyAtNDMgMCAtNTQgLTQgLTg1IC0zNXoiLz4KIDwvZz4KCjwvc3ZnPg==">
-		<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Kaushan Script'/>
-		<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Orbitron'/>
-		<link href="css/main.css" rel="stylesheet"/>
-		<link href="css/color.css" rel="stylesheet"/>
-		<script src="js/core.js"></script>
-		<script src="js/Adv.js"></script>
-		<script src="js/kids.js"></script>
-	</head>
-	<body>
-	<noscript>
-		<header class="noPrint">
-			Did you know, this site is about 50% JavaScript!  So turn it on have it work!
-		</header>
-	</noscript>
-	<!--[if IE]>
-	<ie class="noPrint">
-		<header>
-			Sorry, this was not directly designed for IE &lt; 11.  This site may NOT work!
-		</header>
-	</ie>
-	<![endif]-->
-		<nav class="noPrint">
-			<button onclick="openOp()">
-				Options
-			</button>
-			<button onclick="openAv()">
-				Advanced
-			</button>
-			<button onclick="del()" style="background:red" id="dl">
-				Delete_Name
-			</button>
-		</nav>
-		<div class="div"><span></span><div>
-			<span style="font-size:100px; text-align:center">
-				<span class="prompt noPrint">
-					Type your name:
-				</span>
-				<input onkeyup="act('rez', event)" onclick="act('rez', event)" type="text" id="string" value="null"/>
+<head>
+	<meta charset="UTF-8"/>
+	<meta name="description" content="Convert your name to ninja style!"/>
+	<meta name="keywords" content="convert,generator,name,ninja"/>
+	<meta name="author" content="zekrom_vale"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<title>
+		Ninja Names (&#24525;&#32773;&#12398;&#21517;&#21069;)
+	</title>
+	<link rel="icon" href="data:image/svg+xml;base64,PCFET0NUWVBFIHN2Zz4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMDAwIDIwMDAiPjxwYXRoIGQ9Ik03NzUgMTc0NCBjLTExIC0yIC00NSAtOSAtNzUgLTE1IC0xOTkgLTQwIC00MDAgLTIwMCAtNDk1IC0zOTMgLTYzIC0xMjcgLTc5IC0xOTcgLTc5IC0zMzYgMCAtMTM2IDE3IC0yMTAgNzQgLTMyNSAyMjggLTQ2MiA4MzEgLTU2MyAxMTk1IC0yMDAgMzQgMzMgODEgOTEgMTA1IDEyOCBsNDQgNjcgMTYzIDAgYzg5IDAgMTY0IDQgMTY3IDkgMyA0IC0xNiAyMyAtNDEgNDEgbC00NiAzNCA0NiA0MiBjMjUgMjMgNDMgNDQgNDAgNDggLTQgMyAtNjQgNiAtMTM0IDYgbC0xMjggMCA2IDEwOCBjMTAgMTg2IC00MSAzNTQgLTE1MSA0OTkgLTkyIDEyMiAtMjU0IDIzMCAtNDAxIDI2OSAtNTkgMTUgLTI1MCAyOCAtMjkwIDE4eiBtNzA0IC01MjkgYzI1IC02NyA0MyAtMTc3IDM5IC0yMzcgbC0zIC00MyAtNjQ0IC0zIC02NDQgLTIgNiAxMDcgYzMgNzQgMTIgMTI3IDI3IDE3MSBsMjIgNjIgNTg4IDAgNTg5IDAgMjAgLTU1eiIvPjxjaXJjbGUgY3g9IjExMDAiIGN5PSIxMTAwIiByPSIxMjAiLz48Y2lyY2xlIGN4PSI2NTAiIGN5PSIxMTAwIiByPSIxMjAiLz48L3N2Zz4=">
+	<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Kaushan Script'/>
+	<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Orbitron'/>
+	<link href="css/main.css" rel="stylesheet"/>
+	<link href="css/color.css" rel="stylesheet"/>
+	<script src="js/core.js"></script>
+	<script src="js/kids.js"></script>
+</head>
+<body>
+<!---->
+<noscript><!--data:text/html;base64,-->
+	<header class="noPrint">
+<a href="data:text/html;base64,dashPGEgaHJlZj0iZGF0YTp0ZXh0L2h0bWw7YmFzZTY0LFBHRWdhSEpsWmowaVpHRjBZVHAwWlhoMEwyaDBiV3c3WW1GelpUWTBMRkJIUldkaFNFcHNXbW93YVZwSFJqQlpWSEF3V2xob01Fd3lhREJpVjNjM1dXMUdlbHBVV1RCTVJrSklVbGRrYUZORmNITlhiVzkzWVZad1NGSnFRbHBXU0VGM1YyeG9iMDFGZDNsaFJFSnBWak5qTTFkWE1VZGxiSEJWVjFSQ1RWSnJTa2xWYkdScllVWk9SbU5JVGxoaVZ6a3pXVlphZDFOR1NuRlJiSEJYVTBWR00xWXllRzlpTURGR1pETnNhRkpGU25CV2FrNXFUVEZrV0UxVlpHeGlTRUpXVmpGU1ExUldTbkpUYTJ4V1lrZFNjbGxWV2s5U2JVNUpWR3hvYVZaNmEzcFhWbHBoWkRGT1IxTnVSbEppU0VKWVZUQldSMDB4V1hsbFJ6bHBUVVJHUjFwRVRuTmhSa3BHVTI1Q1YyRnJOWEZVVkVaclYwVXhWbHBIZUdsVFJVcFhWbXBHVTFFeFVsZFRia3BVWVRKNFYxbHJaRk5qYkd4V1YyczVVMkpWTlVwV1IzaHZZVlphTm1FemNGaFdiSEJvV2tSR1QxSXhUblZTYkVwcFUwVktXVlpVUWxkU01EQjRWMWhzYkZKNmJIQlVWVkpIVWpGd1JWUnVUbWhTYTNCSFZUSTFRMVl5Um5KT1dFWlZWa1ZhY2xZd1ZYaFdiSEJJWlVkc1ZGSlZjRmhXYlhCSFZURkZlRlZzWkZSaWEzQnhWV3hrTkZsV2JGVlRiRXByVFZaV05WcFZWVFZXUmtsNFYydGFWazFxUmtoV1ZFcEhUbXhhY2xac2FGZFNWM2Q2VjJ0U1FrMVdXbkpOVld4aFVqTm9WRlp0ZEhkV1JtUlhXa1JDVkUxcmJEUldiVFZIVmtkR2MxTnNRbHBoTVZWNFZtcEdjMVpzV2xWV2JXaHBVbGQzTUZaVVNqQmpNVmw1VTJ0b1ZtSnJjRlpaYkdodlpXeGFjVk5yWkZOaGVsWlpWVzF6TVZZd01IbGhSMFpYWWtaS1MxUldXbk5YUmtwWllVZEdVMVl4U2xWWFYzaFRWakZhYzJKSVNsaGhNMUpUVkZaa05HVldXblJPVlRsV1RXdHdWMVJzVm5OWGJGcFlWVmhrV2xac2NHaFdha3BQVWpGa2MxcEZOVmRoTTBKU1ZteG9kMU14VVhoVWEyUldZbXR3Y0ZWdGVIZFhSbEpZVFZjNVZWSnNjRmhXVjNSUFZrVXhWMk5HYUZwaE1taFlXVlphUzFack5WWlBWbHBvWVRGd1RWWnFTalJXYlZaV1RsWmtZVkpzU25CVmJHUXpUVlprY2xWck9XaE5WbkJJVmpKNGIxWldXa1pYYldoV1lsaG9hRnBYZUZaa01XUjFWR3hvVTAxR2NFcFdSRVpyVWpGVmVWWnVTbGhpUjJoWVZGYzFRMVJHVm5GU2JYUlhUVlp3ZWxsVldtRlhSa2w2WVVaS1YyRnJTbkpVYTJSS1pVZE9SMXBHWkdsU2JrSlNWbTE0YTA1SFZrZFZia3BYVmtWYVZGVnRNRFZPVm5CV1ZtczVXR0pWVmpWV1IzQlRXVlpLTmxKck9XRldNMmhZVmpCYWQxTkdTbk5VYXpWWVVsVlpNRlp0Y0V0T1JsRjRWMWhvYVZKdFVsTlpWM2gzVlZaVmQyRkZUbFppUmxwYVdUQm9UMkZWTVZkWGEyeFlWMGhDZWxaV1dsWmtNa1Y2VTJ4T1UyRXhiM2xXVkVvMFZUSlNSMWRzVWxCV00xSlRWbXRrYW1WV1dsWldhelZQVmpCYVNGVlhNREZWVmxwRlVXNUNWbEl5VGpOVmVrSlBWakZTY1ZGdGFGZE5NbWcyVlRGV2FtVkhVblJYYTFaUVVsUldSVmxYTld0TmJHUlhWVlJDVVZVd2EzSlNSa1oyVTJ4a1dFOVVSa3BTTURWdldXNXZOV0V5U25GUFF6bFBVWHBvTTFWSWJ6UmhWa0p1VFVWMFJGWllRWGhaZWs1U1dqRnZlVlpxUW10U01uZ3hWMjVzUTJWdFVraFNibXhaWWxaYWNsTkdSblpOUjBsNVZHbDBTbUZ1WkRKWFZsRXdVRk5KSzBSUmIwcFNSemwxU2pOUloyUXlPWGxqYm10elNVaFNiMkZZVFdka01qbHVXVkI2T0VSaFVXODRNa1VySWo0TkNnbFVjblZ6ZHo5dFpRMEtQeXc4TDJFK0lnPT0iPg0KCUJlaG9sZHR0aGc/bWFueSBodG1sIHBhZ2VzIGluIG9uZSBVUkxDYz8/PyI8L2E+">
+	Oops, skY]tWing#7entwr[?g, ?ery w??.g!
+</a>
+	</header>
+</noscript>
+<!--[if IE]>
+<ie class="noPrint">
+	<header>
+		So\?L, this was not\??ctly designed for IE &lt; 11.  This site#X^HnOT wo??k
+	</header>
+</ie>
+<![endif]-->
+	<nav class="noPrint">
+
+		<button onclick="Open('options');">
+			Options
+		</button>
+		<button onclick="Open('av');">
+			Advanced
+		</button>
+		<button onclick="del();" style="background:red" id="dl">
+			Delete_Name
+		</button>
+	</nav>
+	<div class="div"><span></span><div>
+	<!--Thanks https://jsfiddle.net/Wexcode/axRxE/ for centering vertically-->
+		<span style="font-size:100px; text-align:center">
+			<span class="prompt noPrint">
+				Type your name:
 			</span>
-			<span class="noPrint">
-				<span class="color">
-					My favorite color is: 
-				</span>
-				<select id="color" onchange="color();RanChar()">
-					<option value="0respect" style="background:white">white</option>
-					<option value="1responsibility" style="background:pink">pink</option>
-					<option value="2citizenship"  style="background:red">red</option>
-					<option value="3honesty" style="background:orange">orange</option>
-					<option value="4perseverance" style="background:yellow">yellow</option>
-					<option value="5positivity" data-value="positive" id="5" style="background:green; color:white">green</option>
-					<option value="6cooperation" style="background:blue" class="wh">blue</option>
-					<option value="7courage" style="background:purple" class="wh">purple</option>
-					<option value="8compassion" style="background:black" class="wh">black</option>
-				</select>
+			<input onkeyup="act('rez', event)" onclick="act('rez', event)" type="text" id="string" value="null"/>
+		</span>
+		<span class="noPrint">
+			<span class="color">
+				My favorite color is: 
 			</span>
-			
-			<h1 class="noScreen nameIs">
-				My ninja name is:
-			</h1>
-			
-			<p id="rez" style="font-family:'Kaushan Script'; margin:auto 0px; text-align:center">todotata</p>
-			<p class="ninjaAbl"> My super secret ninja abilities are <span id="ability">respect</span> and <span id="ability2">positivity</span></p>
-			</div>
+			<select id="color" onchange="color();RanChar()">
+				<option value="0respect" style="background:white">white</option>
+				<option value="1responsibility" style="background:pink">pink</option>
+				<option value="2citizenship"  style="background:red">red</option>
+				<option value="3honesty" style="background:orange">orange</option>
+				<option value="4perseverance" style="background:yellow">yellow</option>
+				<option value="5positivity" style="background:green; color:white">green</option>
+				<option value="6cooperation" style="background:blue" class="wh">blue</option>
+				<option value="7courage" style="background:purple" class="wh">purple</option>
+				<option value="8compassion" style="background:black" class="wh">black</option>
+			</select>
+		</span>
+		
+		<h1 class="noScreen nameIs">
+			My ninja name is:
+		</h1>
+		
+		<p id="rez" style="font-family:'Kaushan Script'; margin:auto 0px; text-align:center">todotata</p>
+		<p class="ninjaAbl"> My super secret ninja abilities are <span id="ability">respect</span> and <span id="ability2">positivity</span></p>
 		</div>
-		
-		
-		<!--End of main page-->
-		
-		
-		<div id="options" class="noPrint" style="display:none">
-			<button id="hide" class="esc" onclick="closeOp()">
-				Close
-			</button>
-			<h3 style="margin:0">
-				Options
-			</h3>
-			<div class="opDiv head">
-				<h4>
-					Keys
-				</h4>
-			</div>
-			<div class="opDiv" style="display:flex">
-				<div>
-					<p>
-						"disable"
-					</p>
-					<p>
-						&lt;HTML tags&gt;
-					</p>
-					<p>
-						&unicode;
-					</p>
-				</div>
-				<div style="margin:auto;">
-					<p>
-						**<b>bold</b>**
-					</p>
-					<p>
-						`<mark>mark</mark>`
-					</p>
-					<p>
-						~<em>italic</em>~
-					</p>
-				</div>
-				<div>
-					<p>
-						_<u>underline</u>_
-					</p>
-					<p>
-						^<sup>superscript</sup>^
-					</p>
-					<p>
-						$<sub>subscript</sub>$
-					</p>
-				</div>
-			</div>
-			<div class="opDiv head">
-				<h4>
-					Mods
-				</h4>
-			</div>
-			<div class="opDiv">
+	</div>
+	
+	<!---->
+	<div id="options" class="noPrint" style="display:none">
+		<button id="hide" class="esc" onclick="Close('options')">
+			Close
+		</button>
+		<h3 style="margin:0">
+			Options
+		</h3>
+		<div class="opDiv head">
+			<h4>
+				Keys
+			</h4>
+		</div>
+		<div class="opDiv" style="display:flex">
+			<div>
 				<p>
-					<span>override modifiers </span><input type="checkbox" id="io" onclick="act('rez', event);"/>
+					"disable"
 				</p>
 				<p>
-					<span>font size </span><input type="text" value="120px" id="size" onchange="Sz()" title="Valid units: em, ex, %, px, cm, mm, in, pt, pc, ch, rem, vh, vw, vmin, vmax"/>
+					&lt;HTML tags&gt;
 				</p>
 				<p>
-					<span>override style (CSS) </span><input type="checkbox" id="css"onchange="css()"/>
+					&amp;unicode;
+				</p>
+			</div>
+			<div style="margin:auto;">
+				<p>
+					**<b>bold</b>**
+				</p>
+				<p>
+					`<mark>mark</mark>`
+				</p>
+				<p>
+					~<em>italic</em>~
+				</p>
+			</div>
+			<div>
+				<p>
+					_<u>underline</u>_
+				</p>
+				<p>
+					^<sup>superscript</sup>^
+				</p>
+				<p>
+					$<sub>subscript</sub>$
 				</p>
 			</div>
 		</div>
-		<div id="av" style="display:none">
-			<div class="esc divAv">
-				<button onclick="closeAv()">Close</button>
-				<button onclick="setLt()" style="margin:5px 0">Set</button>
-				<button onclick="reSetLt()">Reset</button>
-			</div>
-			<h1>
-				Values
-			</h1>
-			<div style="display:flex">
-			<table class="mod">
-				<tr>
-					<th>Letter</th>
-					<th>Replacement</th>
-				</tr>
-				<tr>
-					<td>a</td>
-					<td><input  type="text" value="ka" id="ltA"/></td>
-				</tr>
-				<tr>
-					<td>b</td>
-					<td><input  type="text" value="ru" id="ltB"/></td>
-				</tr>
-				<tr>
-					<td>c</td>
-					<td><input  type="text" value="mi" id="ltC"/></td>
-				</tr>
-				<tr>
-					<td>d</td>
-					<td><input  type="text" value="te" id="ltD"/></td>
-				</tr>
-				<tr>
-					<td>e</td>
-					<td><input  type="text" value="ku" id="ltE"/></td>
-				</tr>
-				<tr>
-					<td>f</td>
-					<td><input  type="text" value="lu" id="ltF"/></td>
-				</tr>
-				<tr>
-					<td>g</td>
-					<td><input  type="text" value="ji" id="ltG"/></td>
-				</tr>
-				<tr>
-					<td>h</td>
-					<td><input  type="text" value="ri" id="ltH"/></td>
-				</tr>
-				<tr>
-					<td>i</td>
-					<td><input  type="text" value="ki" id="ltI"/></td>
-				</tr>
-				<tr>
-					<td>j</td>
-					<td><input  type="text" value="zu" id="ltJ"/></td>
-				</tr>
-				<tr>
-					<td>k</td>
-					<td><input  type="text" value="me" id="ltK"/></td>
-				</tr>
-				<tr>
-					<td>l</td>
-					<td><input  type="text" value="ta" id="ltL"/></td>
-				</tr>
-				<tr>
-					<td>m</td>
-					<td><input  type="text" value="rin" id="ltM"/></td>
-				</tr>
-			</table>
-			<table class="mod">
-				<tr>
-					<th>Letter</th>
-					<th>Replacement</th>
-				</tr>
-				<tr>
-					<td>n</td>
-					<td><input  type="text" value="to" id="ltN"/></td>
-				</tr>
-				<tr>
-					<td>o</td>
-					<td><input  type="text" value="mo" id="ltO"/></td>
-				</tr>
-				<tr>
-					<td>p</td>
-					<td><input  type="text" value="no" id="ltP"/></td>
-				</tr>
-				<tr>
-					<td>q</td>
-					<td><input  type="text" value="ke" id="ltQ"/></td>
-				</tr>
-				<tr>
-					<td>r</td>
-					<td><input  type="text" value="shi" id="ltR"/></td>
-				</tr>
-				<tr>
-					<td>s</td>
-					<td><input  type="text" value="ari" id="ltS"/></td>
-				</tr>
-				<tr>
-					<td>t</td>
-					<td><input  type="text" value="chi" id="ltT"/></td>
-				</tr>
-				<tr>
-					<td>u</td>
-					<td><input  type="text" value="do" id="ltU"/></td>
-				</tr>
-				<tr>
-					<td>v</td>
-					<td><input  type="text" value="ru" id="ltV"/></td>
-				</tr>
-				<tr>
-					<td>w</td>
-					<td><input  type="text" value="mei" id="ltW"/></td>
-				</tr>
-				<tr>
-					<td>x</td>
-					<td><input  type="text" value="na" id="ltX"/></td>
-				</tr>
-				<tr>
-					<td>y</td>
-					<td><input  type="text" value="fu" id="ltY"/></td>
-				</tr>
-				<tr>
-					<td>z</td>
-					<td><input  type="text" value="zi" id="ltZ"/></td>
-				</tr>
-			</table>
-			</div>
+		<div class="opDiv head">
+			<h4>
+				Mods
+			</h4>
 		</div>
-		<footer>
-			<p id="odd" class="noPrint">
-				No Problem characters Detected
+		<div class="opDiv">
+			<p>
+				<span>override modifiers </span><input type="checkbox" id="io" onclick="act('rez', event);"/>
 			</p>
+			<p>
+				<span>font size </span><input type="text" value="120px" id="size" onchange="Sz()" title="Valid units include, but not limited to: em, %, px, cm, mm, in, vh, vw and calc(function)"/>
+			</p>
+			<p>
+				<span>override style (CSS) </span><input type="checkbox" id="css"onchange="css()"/>
+			</p>
+<<<<<<< HEAD:index.html
 		</footer>
 	</body>
 </html>
+=======
+		</div>
+	</div>
+	<div id="av" style="display:none">
+		<div class="esc divAv">
+			<button onclick="Close('av')">Close</button>
+			<button onclick="setLt()" style="margin:5px 0">Set</button>
+			<button onclick="reSetLt()">Reset</button>
+		</div>
+		<h1>
+			Values
+		</h1>
+		<div style="display:flex">
+		<table class="mod">
+			<tr>
+				<th>Letter</th>
+				<th>Replacement</th>
+			</tr>
+			<tr>
+				<td>a</td>
+				<td><input value="ka" id="ltA"/></td>
+			</tr>
+			<tr>
+				<td>b</td>
+				<td><input value="ru" id="ltB"/></td>
+			</tr>
+			<tr>
+				<td>c</td>
+				<td><input value="mi" id="ltC"/></td>
+			</tr>
+			<tr>
+				<td>d</td>
+				<td><input value="te" id="ltD"/></td>
+			</tr>
+			<tr>
+				<td>e</td>
+				<td><input value="ku" id="ltE"/></td>
+			</tr>
+			<tr>
+				<td>f</td>
+				<td><input value="lu" id="ltF"/></td>
+			</tr>
+			<tr>
+				<td>g</td>
+				<td><input value="ji" id="ltG"/></td>
+			</tr>
+			<tr>
+				<td>h</td>
+				<td><input value="ri" id="ltH"/></td>
+			</tr>
+			<tr>
+				<td>i</td>
+				<td><input value="ki" id="ltI"/></td>
+			</tr>
+			<tr>
+				<td>j</td>
+				<td><input value="zu" id="ltJ"/></td>
+			</tr>
+			<tr>
+				<td>k</td>
+				<td><input value="me" id="ltK"/></td>
+			</tr>
+			<tr>
+				<td>l</td>
+				<td><input value="ta" id="ltL"/></td>
+			</tr>
+			<tr>
+				<td>m</td>
+				<td><input value="rin" id="ltM"/></td>
+			</tr>
+		</table>
+		<table class="mod">
+			<tr>
+				<th>Letter</th>
+				<th>Replacement</th>
+			</tr>
+			<tr>
+				<td>n</td>
+				<td><input value="to" id="ltN"/></td>
+			</tr>
+			<tr>
+				<td>o</td>
+				<td><input value="mo" id="ltO"/></td>
+			</tr>
+			<tr>
+				<td>p</td>
+				<td><input value="no" id="ltP"/></td>
+			</tr>
+			<tr>
+				<td>q</td>
+				<td><input value="ke" id="ltQ"/></td>
+			</tr>
+			<tr>
+				<td>r</td>
+				<td><input value="shi" id="ltR"/></td>
+			</tr>
+			<tr>
+				<td>s</td>
+				<td><input value="ari" id="ltS"/></td>
+			</tr>
+			<tr>
+				<td>t</td>
+				<td><input value="chi" id="ltT"/></td>
+			</tr>
+			<tr>
+				<td>u</td>
+				<td><input value="do" id="ltU"/></td>
+			</tr>
+			<tr>
+				<td>v</td>
+				<td><input value="ru" id="ltV"/></td>
+			</tr>
+			<tr>
+				<td>w</td>
+				<td><input value="mei" id="ltW"/></td>
+			</tr>
+			<tr>
+				<td>x</td>
+				<td><input value="na" id="ltX"/></td>
+			</tr>
+			<tr>
+				<td>y</td>
+				<td><input value="fu" id="ltY"/></td>
+			</tr>
+			<tr>
+				<td>z</td>
+				<td><input value="zi" id="ltZ"/></td>
+			</tr>
+		</table>
+		</div>
+	</div>
+	<footer>
+		<p id="odd" class="noPrint">
+			No Problem characters Detected
+		</p>
+	</footer>
+	<!---->
+</body>
+</html>
+<!--  
+	h
+	k
+	n
+	Sw
+	Sy
+	So
+	Sp
+	Sa
+	Sd
+	Sg
+	Sh
+	Sk
+	Sv
+	Sb
+	Sn
+-->
+>>>>>>> refs/remotes/origin/Kids-Club:run.html
