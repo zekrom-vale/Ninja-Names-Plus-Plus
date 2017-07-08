@@ -42,7 +42,7 @@ function setLt(){
 		's': LT('S'), 't': LT('T'), 'u': LT('U'),
 		'v': LT('V'), 'w': LT('W'), 'x': LT('X'),
 		'y': LT('Y'), 'z': LT('Z')
-	}
+	};
 }
 function LT(s, def=true){
 	var val= document.getElementById('lt'+ s);
